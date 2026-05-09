@@ -34,17 +34,17 @@ class BoardState:
         if self.round_number <= 3:
             return 3
         elif self.round_number <= 6:
-            return 4
-        elif self.round_number <= 10:
             return 5
-        elif self.round_number <= 15:
+        elif self.round_number <= 10:
             return 6
-        elif self.round_number <= 20:
+        elif self.round_number <= 15:
             return 7
-        elif self.round_number <= 25:
+        elif self.round_number <= 20:
             return 8
-        else:
+        elif self.round_number <= 25:
             return 9
+        else:
+            return 10
 
     @property
     def all_heroes(self) -> List[str]:

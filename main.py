@@ -5,11 +5,17 @@ import random
 import webbrowser
 from pathlib import Path
 
-from algorithms.game_simulator import PROFILES, simulate_all_profiles
+from algorithms.game_simulator import simulate_all_profiles
 from data.heroes import HEROES
 
+BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = Path(__file__).resolve().parent / "output"
-OUTPUT_FILE = OUTPUT_DIR / "magic_chess_dashboard.html"
+OUTPUT_FILE = OUTPUT_DIR / "index.html"
+OUTPUT_DATA_FILE = OUTPUT_DIR / "data.js"
+DATASET_FILE = OUTPUT_DIR / "dataset.html"
+DATASET_DATA_FILE = OUTPUT_DIR / "dataset-data.js"
+HERO_DATA_FILE = BASE_DIR / "data" / "raw" / "heroes_id.json"
+SYNERGY_DATA_FILE = BASE_DIR / "data" / "raw" / "synergies_id.json"
 
 
 def _run_to_dict(run):
@@ -25,6 +31,8 @@ def _run_to_dict(run):
         "snapshots": [
             {
                 "phase_label": snap.phase_label,
+                "checkpoint_label": snap.checkpoint_label,
+                "player_level": snap.player_level,
                 "subtitle": snap.subtitle,
                 "round_number": snap.round_number,
                 "gold_after": snap.gold_after,
@@ -32,6 +40,9 @@ def _run_to_dict(run):
                 "shop": [HEROES[h].name for h in snap.shop_heroes],
                 "chosen": HEROES[snap.chosen_hero_id].name if snap.chosen_hero_id in HEROES else "-",
                 "chosen_reason": snap.chosen_reason,
+                "carry": HEROES[snap.carry_hero_id].name if snap.carry_hero_id in HEROES else "-",
+                "carry_reason": snap.carry_reason,
+                "decision_algorithm": snap.decision_algorithm,
                 "adaptive_mode": snap.adaptive_mode,
                 "recommendations": [
                     {
@@ -49,103 +60,6 @@ def _run_to_dict(run):
     }
 
 
-def render_html(payload: dict) -> str:
-    data = json.dumps(payload, ensure_ascii=False)
-    html = """<!doctype html>
-<html lang='id'>
-<head>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>Magic Chess Game Simulator</title>
-<style>
-body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#08111d,#0b1524);color:#f8fafc;}
-.wrap{max-width:1200px;margin:0 auto;padding:24px 18px 42px;}
-.hero{background:linear-gradient(135deg,rgba(15,23,42,.95),rgba(17,24,39,.86));border:1px solid rgba(255,255,255,.08);padding:22px;border-radius:22px;}
-.metrics,.grid3,.grid2{display:grid;gap:12px;}
-.metrics{grid-template-columns:repeat(4,1fr);margin-top:14px;}
-.grid3{grid-template-columns:repeat(3,1fr);} .grid2{grid-template-columns:1fr 1.2fr;}
-.card{background:rgba(15,23,42,.86);border:1px solid rgba(255,255,255,.08);padding:14px;border-radius:16px;}
-.phase{background:rgba(15,23,42,.76);border:1px solid rgba(255,255,255,.08);padding:18px;border-radius:18px;margin-top:16px;}
-.chip{display:inline-block;padding:6px 10px;background:#1e293b;border-radius:999px;margin:4px 6px 0 0;font-size:.85rem;}
-.small{color:#cbd5e1;font-size:.9rem;}.muted{color:#94a3b8;font-size:.82rem;}.h1{font-size:2rem;font-weight:800;margin-bottom:6px;}
-button{background:#0ea5e9;border:none;color:white;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;margin-right:8px}
-button.secondary{background:#1e293b}
-.table{width:100%;border-collapse:collapse;margin-top:8px}.table th,.table td{padding:8px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;font-size:.9rem}.table th{color:#94a3b8}
-@media(max-width:980px){.metrics,.grid3,.grid2{grid-template-columns:1fr;}}
-</style>
-</head>
-<body>
-<div class='wrap'>
-  <div class='hero'>
-    <div class='h1'>Magic Chess Go Go Simulator</div>
-    <div class='small'>Tampilan disederhanakan biar lebih enak dibaca. Tinggal pilih strategi dan lihat inti rekomendasinya saja.</div>
-    <div style='margin-top:14px'>
-      <button onclick='prevProfile()' class='secondary'>◀ Strategi</button>
-      <button onclick='nextProfile()'>Strategi Berikutnya ▶</button>
-      <button onclick='nextGame()' style='background:#22c55e'>🎲 Next Game</button>
-    </div>
-  </div>
-  <div id='app'></div>
-</div>
-<script>
-const games = __DATA__;
-let gameIndex = 0;
-let profileIndex = 0;
-const profileKeys = ['farming','neobeast','aggressive'];
-function chipList(items){return (items||[]).map(x=>`<span class="chip">${x}</span>`).join('') || '-';}
-function nextGame(){gameIndex = (gameIndex + 1) % games.length; render();}
-function nextProfile(){profileIndex = (profileIndex + 1) % profileKeys.length; render();}
-function prevProfile(){profileIndex = (profileIndex - 1 + profileKeys.length) % profileKeys.length; render();}
-function recTable(items){return `<table class="table"><thead><tr><th>#</th><th>Hero</th><th>Cost</th><th>Score</th><th>Alasan</th></tr></thead><tbody>${(items||[]).map(r=>`<tr><td>${r.rank}</td><td>${r.hero}</td><td>${r.cost}</td><td>${r.adjusted}</td><td>${r.reason}</td></tr>`).join('')}</tbody></table>`}
-function render(){
-  const root = document.getElementById('app');
-  const game = games[gameIndex];
-  const key = profileKeys[profileIndex];
-  const run = game.runs[key];
-  root.innerHTML = `
-    <div class="metrics" style="grid-template-columns:repeat(3,1fr)">
-      <div class="card"><div class="muted">Strategi</div><div><b>${run.profile.name}</b></div></div>
-      <div class="card"><div class="muted">Final Power</div><div><b>${run.final_power}</b></div></div>
-      <div class="card"><div class="muted">Core Synergy</div><div><b>${run.final_synergies.slice(0,2).join(', ') || '-'}</b></div></div>
-    </div>
-    <div class="phase">
-      <div style="font-size:1rem;font-weight:800">Build Akhir</div>
-      <div class="small">Core synergy: ${run.final_synergies.join(', ') || '-'}</div>
-      <div style="margin-top:8px">${chipList(run.final_board)}</div>
-    </div>
-    ${run.snapshots.map(s=>`
-      <div class="phase">
-        <div style="font-size:1.05rem;font-weight:800">${s.phase_label}</div>
-        <div class="small">${s.subtitle}</div>
-        <div class="metrics" style="grid-template-columns:repeat(3,1fr)">
-          <div class="card"><div class="muted">Round</div><div><b>${s.round_number}</b></div></div>
-          <div class="card"><div class="muted">Gold</div><div><b>${s.gold_after}</b></div></div>
-          <div class="card"><div class="muted">Mode</div><div><b>${s.adaptive_mode}</b></div></div>
-        </div>
-        <div class="grid2" style="margin-top:12px">
-          <div>
-            <div class="small"><b>Shop</b></div>
-            <div>${chipList(s.shop)}</div>
-            <div class="small" style="margin-top:12px"><b>Dipilih</b></div>
-            <div class="card" style="margin-top:8px"><b>${s.chosen}</b><div class="small">${s.chosen_reason}</div></div>
-            <div class="small" style="margin-top:12px"><b>Board setelah beli</b></div>
-            <div>${chipList(s.board_after)}</div>
-          </div>
-          <div>
-            <div class="small"><b>Top 3 rekomendasi</b></div>
-            ${recTable(s.recommendations)}
-          </div>
-        </div>
-      </div>
-    `).join('')}
-  `;
-}
-render();
-</script>
-</body></html>"""
-    return html.replace("__DATA__", data)
-
-
 def build_games(sample_count: int = 20):
     games = []
     for _ in range(sample_count):
@@ -155,10 +69,204 @@ def build_games(sample_count: int = 20):
     return games
 
 
+def render_html() -> str:
+    return f"""<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCGG Hybrid Optimizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sky-glow" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="MCGG Hybrid Optimizer">
+      <img class="brand-logo" src="assets/logo/download.jpg" alt="">
+      <span>MCGG Hybrid Optimizer</span>
+    </a>
+    <nav class="nav-pills" aria-label="Main navigation">
+      <a href="#top">Home</a>
+      <a href="#shop">Rekomendasi</a>
+      <a href="#build">Lineup</a>
+      <a href="#dataset">Dataset</a>
+    </nav>
+  </header>
+
+  <main id="top" class="page-shell">
+    <section class="hero-section">
+      <div class="hero-copy">
+        <span class="season-chip">Greedy - Heuristic - Adaptive</span>
+        <h1>MCGG Hybrid Optimizer</h1>
+        <div class="hero-actions">
+          <button id="next-game" class="btn btn-gold" type="button">Next Game</button>
+          <label class="strategy-picker">
+            <span>Strategi</span>
+            <select id="strategy-select" aria-label="Pilih strategi">
+              <option value="farming">Farming / Scavenger</option>
+              <option value="neobeast">Stacking / Neobeasts</option>
+              <option value="normal">Normal</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulator" class="summary-grid" aria-label="Ringkasan simulasi">
+      <article class="summary-card">
+        <span>Strategi</span>
+        <strong id="summary-profile">-</strong>
+      </article>
+      <article class="summary-card">
+        <span>Final Power</span>
+        <strong id="summary-power">-</strong>
+      </article>
+      <article class="summary-card">
+        <span>Core Synergy</span>
+        <strong id="summary-synergy">-</strong>
+      </article>
+      <article class="summary-card">
+        <span>Seed</span>
+        <strong id="summary-seed">-</strong>
+      </article>
+    </section>
+
+    <section class="algorithm-guide" aria-label="Penjelasan algoritma per fase">
+      <article class="guide-card">
+        <span>Early Game</span>
+        <h3>Greedy</h3>
+        <p>Dipakai pada checkpoint 2-1 dan 2-5 karena keputusan awal harus cepat, murah, dan langsung memberi value dari shop yang tersedia.</p>
+      </article>
+      <article class="guide-card">
+        <span>Mid Game</span>
+        <h3>Heuristic</h3>
+        <p>Dipakai pada checkpoint 3-2 dan 4-1 karena board sudah punya arah, sehingga pilihan hero perlu melihat potensi synergy, carry transisi, dan jalur late game.</p>
+      </article>
+      <article class="guide-card">
+        <span>Late Game</span>
+        <h3>Adaptive</h3>
+        <p>Dipakai pada checkpoint 5-1 dan 6-1 karena keputusan akhir harus menyesuaikan gold, level shop, carry yang sudah terbentuk, dan peluang upgrade ke hero cost tinggi.</p>
+      </article>
+    </section>
+
+    <section id="shop" class="timeline" aria-label="Simulasi tiap fase">
+      <div class="panel-title">
+        <span>Refresh Timeline</span>
+        <h2>Shop, Pick, dan Rekomendasi</h2>
+      </div>
+      <div id="phase-list"></div>
+    </section>
+
+    <section id="build" class="feature-panel build-panel">
+      <div class="panel-title">
+        <span>Final Lineup</span>
+        <h2>Lineup Akhir</h2>
+      </div>
+      <div id="final-build"></div>
+    </section>
+
+    <section id="dataset" class="dataset-page">
+      <section class="hero-section dataset-hero">
+        <div class="hero-copy">
+          <span class="season-chip">Season 5 Dataset</span>
+          <h1>Hero & Synergy Data</h1>
+        </div>
+      </section>
+
+      <section class="dataset-toolbar">
+        <div class="dataset-tabs" role="tablist" aria-label="Dataset tab">
+          <button id="hero-tab" class="btn btn-primary" type="button">Hero</button>
+          <button id="synergy-tab" class="btn btn-soft" type="button">Sinergi</button>
+        </div>
+        <label class="dataset-search">
+          <span>Search</span>
+          <input id="dataset-search" type="search" placeholder="Cari hero atau sinergi...">
+        </label>
+      </section>
+
+      <section class="summary-grid dataset-summary" aria-label="Dataset summary">
+        <article class="summary-card">
+          <span>Total Hero</span>
+          <strong id="hero-count">-</strong>
+        </article>
+        <article class="summary-card">
+          <span>Total Sinergi</span>
+          <strong id="synergy-count">-</strong>
+        </article>
+        <article class="summary-card">
+          <span>Mode</span>
+          <strong id="dataset-mode">Hero</strong>
+        </article>
+        <article class="summary-card">
+          <span>Patch</span>
+          <strong>Season 5</strong>
+        </article>
+      </section>
+
+      <section class="feature-panel">
+        <div class="panel-title">
+          <span id="dataset-kicker">Hero Dataset</span>
+          <h2 id="dataset-title">Daftar Hero</h2>
+        </div>
+        <div id="dataset-content"></div>
+      </section>
+    </section>
+  </main>
+
+  <div class="bgm-control" aria-label="Background music controls">
+    <button id="bgm-toggle" class="btn btn-audio is-playing" type="button" aria-pressed="true">Mute</button>
+    <label class="volume-control">
+      <span>Vol</span>
+      <input id="bgm-volume" type="range" min="0" max="100" value="35">
+    </label>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="dataset-data.js"></script>
+  <script src="script.js"></script>
+  <script src="dataset.js"></script>
+  <script src="bgm.js"></script>
+</body>
+</html>"""
+
+
+def render_data(payload: list[dict]) -> str:
+    data = json.dumps(payload, ensure_ascii=False)
+    return f"window.MCGG_GAMES = {data};\n"
+
+
+def render_dataset_html() -> str:
+    return """<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=index.html#dataset">
+  <title>Dataset - MCGG Hybrid Optimizer</title>
+</head>
+<body>
+  <script>window.location.replace("index.html#dataset");</script>
+</body>
+</html>"""
+
+
+def render_dataset_data() -> str:
+    heroes = json.loads(HERO_DATA_FILE.read_text(encoding="utf-8"))
+    synergies = json.loads(SYNERGY_DATA_FILE.read_text(encoding="utf-8"))
+    data = json.dumps({"heroes": heroes, "synergies": synergies}, ensure_ascii=False)
+    return f"window.MCGG_DATASET = {data};\n"
+
+
 def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     payload = build_games(20)
-    OUTPUT_FILE.write_text(render_html(payload), encoding="utf-8")
+    OUTPUT_FILE.write_text(render_html(), encoding="utf-8")
+    OUTPUT_DATA_FILE.write_text(render_data(payload), encoding="utf-8")
+    DATASET_FILE.write_text(render_dataset_html(), encoding="utf-8")
+    DATASET_DATA_FILE.write_text(render_dataset_data(), encoding="utf-8")
     print(f"Dashboard berhasil dibuat: {OUTPUT_FILE}")
     try:
         webbrowser.open(OUTPUT_FILE.as_uri())

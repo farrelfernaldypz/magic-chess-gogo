@@ -25,16 +25,16 @@ from data.synergies import SYNERGIES
 from core.board import BoardState
 
 
-# Pendekatan sederhana untuk peluang shop berdasarkan round.
-# Angka ini bukan data resmi; dipakai agar simulasi terasa random dan masuk akal.
-ROUND_COST_ODDS: List[tuple[int, Dict[int, int]]] = [
-    (4,  {1: 75, 2: 20, 3: 5,  4: 0,  5: 0}),
-    (8,  {1: 55, 2: 30, 3: 12, 4: 3,  5: 0}),
-    (12, {1: 35, 2: 35, 3: 22, 4: 7,  5: 1}),
-    (18, {1: 18, 2: 28, 3: 32, 4: 17, 5: 5}),
-    (24, {1: 8,  2: 18, 3: 35, 4: 28, 5: 11}),
-    (99, {1: 3,  2: 10, 3: 30, 4: 35, 5: 22}),
-]
+# Peluang shop berdasarkan level player.
+# g1-g5 berarti cost hero 1 sampai 5 gold.
+LEVEL_COST_ODDS: Dict[int, Dict[int, int]] = {
+    5: {1: 34, 2: 35, 3: 30, 4: 1, 5: 0},
+    6: {1: 25, 2: 30, 3: 40, 4: 5, 5: 0},
+    7: {1: 19, 2: 28, 3: 42, 4: 10, 5: 1},
+    8: {1: 16, 2: 26, 3: 35, 4: 18, 5: 5},
+    9: {1: 13, 2: 22, 3: 25, 4: 26, 5: 14},
+    10: {1: 6, 2: 12, 3: 22, 4: 35, 5: 25},
+}
 
 
 @dataclass
@@ -46,12 +46,10 @@ class ShopRoll:
     seed: Optional[int] = None
 
 
-def get_cost_odds(round_number: int) -> Dict[int, int]:
-    """Ambil distribusi peluang cost sesuai round."""
-    for max_round, odds in ROUND_COST_ODDS:
-        if round_number <= max_round:
-            return odds
-    return ROUND_COST_ODDS[-1][1]
+def get_cost_odds(level: int) -> Dict[int, int]:
+    """Ambil distribusi peluang cost sesuai level player."""
+    clamped_level = min(max(level, 5), 10)
+    return LEVEL_COST_ODDS[clamped_level]
 
 
 def _weighted_cost(rng: random.Random, odds: Dict[int, int]) -> int:
@@ -68,13 +66,13 @@ def roll_shop(
     exclude_owned: bool = True,
 ) -> ShopRoll:
     """
-    Roll shop acak berdasarkan round.
+    Roll shop acak berdasarkan level/slot board.
 
     Hero yang sudah dimiliki bisa dikeluarkan dari pool agar rekomendasi
     lebih mudah dibaca untuk tugas/visualisasi.
     """
     local_rng = rng or random.Random(seed)
-    odds = get_cost_odds(board.round_number)
+    odds = get_cost_odds(board.max_slots)
     owned = set(board.all_heroes) if exclude_owned else set()
     chosen: List[str] = []
 
