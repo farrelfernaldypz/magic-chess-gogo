@@ -1,0 +1,3352 @@
+[
+  {
+    "hero_name": "Edith",
+    "cost": 5,
+    "base_stats": {
+      "hp": [
+        3325,
+        5985,
+        41232
+      ],
+      "physical_atk": [
+        230,
+        345,
+        735
+      ],
+      "magic_atk": [
+        230,
+        345,
+        735
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        30,
+        30,
+        20
+      ],
+      "mana_max": [
+        50,
+        50,
+        50
+      ]
+    },
+    "skill": {
+      "name": "Primal Wrath",
+      "description": "Edith menyebabkan airborne ke lawan dalam jangkauan 9 petak di depannya, memberikan (+195%Total Physical ATK) Physical DMG dan memulihkan 12% Max HP. (DMG berkurang seiring dengan jumlah lawan yang terkena.) Pasif: Ketika HP berada di bawah 30%, dia berpindah ke lokasi yang aman dan berubah wujud. Skill aktif berikutnya meningkatkan 30% ATK Speed. Dia kemudian mengonversi setiap poin Hybrid DEF tambahan menjadi 1.5 Magic ATK, mendapatkan Shield sebesar 75% Max HP, dan menerima 10% Hybrid Lifesteal. Basic ATK berikutnya memberikan tambahan (+40%Total Magic ATK) Magic DMG hingga ke 4 lawan. Langsung menggunakan skill sekali setelah berubah wujud.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "195%",
+            "210%",
+            "900%"
+          ]
+        },
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "40%",
+            "40%",
+            "240%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Beyond the Clouds",
+      "Defender"
+    ]
+  },
+  {
+    "hero_name": "Natalia",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        2024,
+        3643,
+        6787
+      ],
+      "physical_atk": [
+        120,
+        180,
+        240
+      ],
+      "magic_atk": [
+        120,
+        180,
+        240
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        20,
+        20,
+        20
+      ],
+      "mana_max": [
+        40,
+        40,
+        40
+      ]
+    },
+    "skill": {
+      "name": "The Hunt",
+      "description": "Natalia mengaktifkan Assassin Instinct, memperkuat Basic ATK berikutnya untuk memberikan (+360%Total Physical ATK) Physical DMG.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "360%",
+            "360%",
+            "460%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Beyond the Clouds",
+      "Swiftblade"
+    ]
+  },
+  {
+    "hero_name": "Granger",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        1705,
+        3069,
+        5524
+      ],
+      "physical_atk": [
+        110,
+        165,
+        220
+      ],
+      "magic_atk": [
+        110,
+        165,
+        220
+      ],
+      "atk_speed": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        30,
+        30,
+        30
+      ],
+      "mana_max": [
+        50,
+        50,
+        50
+      ]
+    },
+    "skill": {
+      "name": "Rhapsody",
+      "description": "Granger melepaskan 3 tembakan beruntun ke target, masing-masing memberikan (+200%Total Physical ATK) Physical DMG.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "200%",
+            "200%",
+            "275%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Exorcist",
+      "Marksman"
+    ]
+  },
+  {
+    "hero_name": "Hayabusa",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3321,
+        5978,
+        14779
+      ],
+      "physical_atk": [
+        170,
+        255,
+        340
+      ],
+      "magic_atk": [
+        170,
+        255,
+        340
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        80,
+        80,
+        80
+      ],
+      "mana_max": [
+        100,
+        100,
+        100
+      ]
+    },
+    "skill": {
+      "name": "Ougi: Shadow Kill",
+      "description": "Hayabusa berubah menjadi bayangan dan menyerang lawan dalam jangkauan sebanyak 3 kali, memberikan total (+945% Total Physical ATK) Physical DMG.",
+      "skill_attributes": [
+        {
+          "name": "Serangan",
+          "values": [
+            "3",
+            "5",
+            "7"
+          ]
+        },
+        {
+          "name": "Bonus Physical Total",
+          "values": [
+            "945%",
+            "965%",
+            "2450%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Exorcist",
+      "Phasewarper"
+    ]
+  },
+  {
+    "hero_name": "Phoveus",
+    "cost": 1,
+    "base_stats": {
+      "hp": [
+        2030,
+        3654,
+        6090
+      ],
+      "physical_atk": [
+        105,
+        160,
+        210
+      ],
+      "magic_atk": [
+        105,
+        160,
+        210
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        30,
+        30,
+        30
+      ],
+      "mana_max": [
+        50,
+        50,
+        50
+      ]
+    },
+    "skill": {
+      "name": "Demonic Impact",
+      "description": "Phoveus memperkuat Basic ATK berikutnya, memberikan (+250%Total Physical ATK) Physical DMG dan mengurangi Hybrid ATK target sebesar 10% selama 10 detik. Dia juga mendapatkan Shield sebesar 8% Max HP selama 4 detik.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "250%",
+            "250%",
+            "340%"
+          ]
+        },
+        {
+          "name": "Persentase Shield",
+          "values": [
+            "8%",
+            "8%",
+            "10%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Exorcist",
+      "Scavenger"
+    ]
+  },
+  {
+    "hero_name": "Ruby",
+    "cost": 5,
+    "base_stats": {
+      "hp": [
+        4263,
+        7673,
+        52861
+      ],
+      "physical_atk": [
+        230,
+        345,
+        735
+      ],
+      "magic_atk": [
+        230,
+        345,
+        735
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        80,
+        80,
+        20
+      ],
+      "mana_max": [
+        100,
+        100,
+        100
+      ]
+    },
+    "skill": {
+      "name": "Don't Run, Wolf King!",
+      "description": "Ruby bergerak ke posisi dengan lawan terbanyak dalam jarak 3 petak. Dia kemudian memberikan (+160%Total Physical ATK) Physical DMG sebanyak dua kali dan menyebabkan taunt ke lawan di sekitarnya selama 3 detik. Pasif: Saat menerima DMG, Ruby berpeluang 25% untuk memberikan (+50%Total Physical ATK) Physical DMG sebanyak dua kali ke lawan di sekitarnya dan mendapatkan 2% Hybrid Lifesteal, bisa di-stack hingga 5 kali. Saat mencapai Bintang 3, jangkauan ATK dari semua tebasan digandakan. (Semua DMG berkurang seiring dengan jumlah lawan yang terkena.)",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "160%",
+            "170%",
+            "280%"
+          ]
+        },
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "50%",
+            "55%",
+            "145%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Exorcist",
+      "Dauntless"
+    ]
+  },
+  {
+    "hero_name": "Saber",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2576,
+        4637,
+        8758
+      ],
+      "physical_atk": [
+        145,
+        220,
+        290
+      ],
+      "magic_atk": [
+        145,
+        220,
+        290
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        60,
+        60,
+        60
+      ],
+      "mana_max": [
+        80,
+        80,
+        80
+      ]
+    },
+    "skill": {
+      "name": "Orbiting Swords",
+      "description": "Saber melepaskan 5 Orbiting Sword yang mengitarinya, memberikan (+120%Total Physical ATK) Physical DMG sebanyak 5 kali ke lawan di sekitar. (DMG berkurang seiring dengan jumlah lawan yang terkena.)",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "120%",
+            "120%",
+            "190%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Exorcist",
+      "Swiftblade"
+    ]
+  },
+  {
+    "hero_name": "Yu Zhong",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3496,
+        6293,
+        15557
+      ],
+      "physical_atk": [
+        180,
+        270,
+        405
+      ],
+      "magic_atk": [
+        180,
+        270,
+        405
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        60,
+        60,
+        60
+      ],
+      "mana_max": [
+        80,
+        80,
+        80
+      ]
+    },
+    "skill": {
+      "name": "Soul Grip",
+      "description": "Yu Zhong melepaskan 3 Dragon Soul ATK. 2 ATK pertama memberikan (+200%Total Physical ATK) Physical DMG ke lawan di depan. ATK ke-3 memiliki jangkauan yang diperkuat dan memberikan (+270%Total Physical ATK) Physical DMG. DMG berkurang seiring dengan jumlah lawan yang terkena. Pasif: Dragon Soul ATK dihitung sebagai Basic ATK dan berpeluang memicu efek Bruiser untuk melakukan serangan tambahan 1 kali.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "200%",
+            "200%",
+            "580%"
+          ]
+        },
+        {
+          "name": "DMG yang Ditingkatkan",
+          "values": [
+            "270%",
+            "270%",
+            "770%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Exorcist",
+      "Bruiser"
+    ]
+  },
+  {
+    "hero_name": "Aldous",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        2024,
+        3643,
+        6558
+      ],
+      "physical_atk": [
+        110,
+        165,
+        220
+      ],
+      "magic_atk": [
+        110,
+        165,
+        220
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        30,
+        30,
+        30
+      ],
+      "mana_max": [
+        50,
+        50,
+        50
+      ]
+    },
+    "skill": {
+      "name": "Contract: Transform",
+      "description": "Aldous melepaskan energi terpendamnya untuk memperkuat Basic ATK berikutnya, memberikan (+340% Total Physical ATK) Physical DMG ke target dan mendapatkan (+100% Total Physical ATK) Shield.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "340%",
+            "350%",
+            "530%"
+          ]
+        },
+        {
+          "name": "Bonus Shield",
+          "values": [
+            "100%",
+            "130%",
+            "200%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Glory League",
+      "Bruiser"
+    ]
+  },
+  {
+    "hero_name": "Beatrix",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        1705,
+        3069,
+        5524
+      ],
+      "physical_atk": [
+        110,
+        165,
+        220
+      ],
+      "magic_atk": [
+        110,
+        165,
+        220
+      ],
+      "atk_speed": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        30,
+        30,
+        30
+      ],
+      "mana_max": [
+        50,
+        50,
+        50
+      ]
+    },
+    "skill": {
+      "name": "Bennett Bombardment",
+      "description": "Beatrix menggunakan Bennett untuk mengebom target, memberikan (+590%Total Physical ATK) Physical DMG ke lawan di area kecil. (DMG berkurang seiring dengan jumlah lawan yang terkena.)",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "590%",
+            "590%",
+            "730%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Glory League",
+      "Marksman"
+    ]
+  },
+  {
+    "hero_name": "Minotaur",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2700,
+        4860,
+        9180
+      ],
+      "physical_atk": [
+        135,
+        205,
+        270
+      ],
+      "magic_atk": [
+        135,
+        205,
+        270
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        60,
+        60,
+        60
+      ],
+      "mana_max": [
+        80,
+        80,
+        80
+      ]
+    },
+    "skill": {
+      "name": "Despair Stomp",
+      "description": "Minotaur menyebabkan airborne ke lawan di sekitar, memberikan (+360%Total Physical ATK) Physical DMG dan memulihkan 15% Max HP. (DMG berkurang seiring dengan jumlah lawan yang terkena.)",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "360%",
+            "360%",
+            "540%"
+          ]
+        },
+        {
+          "name": "HP Regen",
+          "values": [
+            "15%",
+            "15%",
+            "20%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Glory League",
+      "Defender"
+    ]
+  },
+  {
+    "hero_name": "Roger",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3496,
+        6293,
+        15557
+      ],
+      "physical_atk": [
+        180,
+        270,
+        405
+      ],
+      "magic_atk": [
+        180,
+        270,
+        405
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        2,
+        2,
+        2
+      ],
+      "mana_initial": [
+        40,
+        40,
+        40
+      ],
+      "mana_max": [
+        60,
+        60,
+        60
+      ]
+    },
+    "skill": {
+      "name": "Wolf Transformation",
+      "description": "Wujud Manusia: Roger melesat ke depan dan berubah menjadi serigala, memberikan (+150%Total Physical ATK) Physical DMG ke lawan di sekitar dan mendapatkan 500 Shield. (DMG berkurang seiring dengan jumlah lawan yang terkena.) Wujud Serigala: Roger menjadi tidak bisa ditargetkan dan menyerang target memberikan (+200%Total Physical ATK) Physical DMG ke target dan lawan di sekitar hingga 3 kali.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "150%",
+            "150%",
+            "480%"
+          ]
+        },
+        {
+          "name": "Shield",
+          "values": [
+            "500",
+            "900",
+            "4000"
+          ]
+        },
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "200%",
+            "200%",
+            "600%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Glory League",
+      "Weapon Master"
+    ]
+  },
+  {
+    "hero_name": "Alucard",
+    "cost": 1,
+    "base_stats": {
+      "hp": [
+        1840,
+        3312,
+        5520
+      ],
+      "physical_atk": [
+        110,
+        165,
+        220
+      ],
+      "magic_atk": [
+        110,
+        165,
+        220
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        60,
+        60,
+        60
+      ],
+      "mana_max": [
+        80,
+        80,
+        80
+      ]
+    },
+    "skill": {
+      "name": "Groundsplitter",
+      "description": "Alucard memberikan (+500%Total Physical ATK) Physical DMG ke target.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "500%",
+            "500%",
+            "650%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Heartbond",
+      "Weapon Master"
+    ]
+  },
+  {
+    "hero_name": "Esmeralda",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3496,
+        6293,
+        15557
+      ],
+      "physical_atk": [
+        180,
+        270,
+        405
+      ],
+      "magic_atk": [
+        180,
+        270,
+        405
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Falling Starmoon",
+      "description": "Esmeralda menyatukan kekuatan Astrospace, mendapatkan Shield sebesar 8% Max HP selama 4 detik. Dia memberikan (+215% Total Magic ATK) Magic DMG (DMG berkurang seiring dengan jumlah lawan yang terkena) ke lawan di sekitar dan menyebabkan stun ke mereka selama 0.5 detik. Pasif: Basic ATK memberikan (+50% Total Physical ATK) Physical DMG dan (+50% Total Magic ATK) Magic DMG.",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "215%",
+            "215%",
+            "680%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Heartbond",
+      "Dauntless"
+    ]
+  },
+  {
+    "hero_name": "Khufra",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2842,
+        5116,
+        9663
+      ],
+      "physical_atk": [
+        135,
+        205,
+        270
+      ],
+      "magic_atk": [
+        135,
+        205,
+        270
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Khufra's Embrace",
+      "description": "Khufra mendapatkan 250 Shield selama 4 detik dan menyapu target dalam jangkauan di depannya, memberikan (+465%Total Physical ATK) Physical DMG (DMG berkurang seiring dengan jumlah lawan yang terkena) dan menyebabkan stun selama 1 detik.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "465%",
+            "520%",
+            "875%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Heartbond",
+      "Defender"
+    ]
+  },
+  {
+    "hero_name": "Lancelot",
+    "cost": 5,
+    "base_stats": {
+      "hp": [
+        4048,
+        7286,
+        50195
+      ],
+      "physical_atk": [
+        240,
+        360,
+        770
+      ],
+      "magic_atk": [
+        240,
+        360,
+        770
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        50,
+        50,
+        20
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Phantom Execution",
+      "description": "Lancelot menerjang 2 kali, memberikan (+135%Total Physical ATK) Physical DMG ke lawan di sepanjang jalur. Terjangan terakhir menargetkan lawan terjauh dalam jarak 3 petak, memberikan (+100%Total Physical ATK) Physical DMG sebanyak 3 kali ke target dan lawan di sekitarnya.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "135%",
+            "150%",
+            "595%"
+          ]
+        },
+        {
+          "name": "DMG Area",
+          "values": [
+            "100%",
+            "110%",
+            "150%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Heartbond",
+      "Phasewarper"
+    ]
+  },
+  {
+    "hero_name": "Miya",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2170,
+        3906,
+        7378
+      ],
+      "physical_atk": [
+        130,
+        195,
+        260
+      ],
+      "magic_atk": [
+        130,
+        195,
+        260
+      ],
+      "atk_speed": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Moon Arrow",
+      "description": "Miya mendapatkan 50% ATK Speed selama 5 detik. Selama durasi ini, dia menembakkan 1 Split Arrow tambahan yang memberikan 50% DMG dan mengaktifkan Efek Basic ATK.",
+      "skill_attributes": [
+        {
+          "name": "Bonus ATK Speed",
+          "values": [
+            "50%",
+            "50%",
+            "55%"
+          ]
+        },
+        {
+          "name": "Split Arrow",
+          "values": [
+            "1",
+            "2",
+            "3"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Heartbond",
+      "Marksman"
+    ]
+  },
+  {
+    "hero_name": "Odette",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        1705,
+        3069,
+        5524
+      ],
+      "physical_atk": [
+        90,
+        135,
+        180
+      ],
+      "magic_atk": [
+        90,
+        135,
+        180
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Lakeshore Ambience",
+      "description": "Odette melemparkan Musical Note, memberikan (+650%Total Magic ATK) Magic DMG ke target. Jika ada lawan di sekitar, Note tersebut akan memantul ke mereka untuk memberikan DMG lagi. Lawan yang terkena mendapatkan pengurangan Efek Pemulihan yang Diterima sebesar 30% selama 5 detik.",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "650%",
+            "650%",
+            "870%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Heartbond",
+      "Stargazer"
+    ]
+  },
+  {
+    "hero_name": "Chris",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        2233,
+        4019,
+        7235
+      ],
+      "physical_atk": [
+        115,
+        175,
+        230
+      ],
+      "magic_atk": [
+        115,
+        175,
+        230
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        20,
+        20,
+        20
+      ],
+      "mana_max": [
+        40,
+        40,
+        40
+      ]
+    },
+    "skill": {
+      "name": "Spectre Step",
+      "description": "Chris mengeluarkan Circle Strike, memberikan (+200%Total Physical ATK) DMG ke lawan di sekitar dan memulihkan (+170%Total Physical ATK) HP. (DMG berkurang seiring dengan jumlah lawan yang terkena.) Pasif: Saat pertarungan dimulai, Chris dan rekan dalam jarak 1 petak di kiri dan kanannya mendapatkan 10% Hybrid Lifesteal.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "200%",
+            "200%",
+            "270%"
+          ]
+        },
+        {
+          "name": "Bonus Physical saat Pemulihan",
+          "values": [
+            "170%",
+            "170%",
+            "220%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "KOF",
+      "Dauntless"
+    ]
+  },
+  {
+    "hero_name": "K'",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3776,
+        6796,
+        16802
+      ],
+      "physical_atk": [
+        180,
+        270,
+        405
+      ],
+      "magic_atk": [
+        180,
+        270,
+        405
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        40,
+        40,
+        40
+      ],
+      "mana_max": [
+        60,
+        60,
+        60
+      ]
+    },
+    "skill": {
+      "name": "Blazing Requiem",
+      "description": "K' meluncurkan beberapa kobaran api ke depan, masing-masing memberikan (+90% Total Magic ATK) Magic DMG saat mengenai target. Setelah penggunaan skill pertama, dia kemudian berlari ke lawan yang memberikan DMG tertinggi dalam jarak 4 petak dan memanggil kembali api tersebut, memberikan sejumlah Magic DMG yang sama.",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "90%",
+            "90%",
+            "235%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "KOF",
+      "Swiftblade"
+    ]
+  },
+  {
+    "hero_name": "Kula",
+    "cost": 1,
+    "base_stats": {
+      "hp": [
+        1550,
+        2790,
+        4650
+      ],
+      "physical_atk": [
+        80,
+        120,
+        160
+      ],
+      "magic_atk": [
+        80,
+        120,
+        160
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Hailstone Blast",
+      "description": "Kula memanggil Bongkahan Es untuk menyerang target, memberikan (+930%Total Magic ATK) Magic DMG.",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "930%",
+            "930%",
+            "1140%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "KOF",
+      "Stargazer"
+    ]
+  },
+  {
+    "hero_name": "Leona",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2576,
+        4637,
+        8758
+      ],
+      "physical_atk": [
+        145,
+        220,
+        290
+      ],
+      "magic_atk": [
+        145,
+        220,
+        290
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        80,
+        80,
+        80
+      ],
+      "mana_max": [
+        100,
+        100,
+        100
+      ]
+    },
+    "skill": {
+      "name": "Elusiveness",
+      "description": "Saat pertama kali menggunakan skill, Leona menerjang ke lawan yang memberikan DMG tertinggi dalam jarak 3 petak (memprioritaskan Hero jarak jauh) dan memasuki mode Elusiveness selama 2 detik. Selama periode ini, dia kebal terhadap 5 Basic ATK yang diterima. Pasif: Setelah menyerang target dua kali berturut-turut, serangan ketiga Leona memberikan (+250%Total Magic ATK) Magic DMG tambahan ke target.",
+      "skill_attributes": [
+        {
+          "name": "Cooldown",
+          "values": [
+            "2.0",
+            "4.0",
+            "6.0"
+          ]
+        },
+        {
+          "name": "Durasi",
+          "values": [
+            "2",
+            "4",
+            "6"
+          ]
+        },
+        {
+          "name": "Jumlah Basic ATK",
+          "values": [
+            "5",
+            "6",
+            "8"
+          ]
+        },
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "250%",
+            "250%",
+            "390%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "KOF",
+      "Scavenger"
+    ]
+  },
+  {
+    "hero_name": "Terry Bogard",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3857,
+        6943,
+        17164
+      ],
+      "physical_atk": [
+        175,
+        265,
+        395
+      ],
+      "magic_atk": [
+        175,
+        265,
+        395
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Knockout Strike",
+      "description": "Terry Bogard mendapatkan Shield sebesar 8% Max HP selama 3 detik, menjadi Kebal Crowd Control dan menerjang target dengan melancarkan pukulan, memberikan (+320%Total Physical ATK) Physical DMG ke target dalam jangkauan dan menyebabkan stun selama 0.5 detik sebelum mundur dengan cepat. (DMG berkurang seiring dengan jumlah lawan yang terkena.)",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "320%",
+            "320%",
+            "955%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "KOF",
+      "Defender"
+    ]
+  },
+  {
+    "hero_name": "Cici",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        2024,
+        3643,
+        6558
+      ],
+      "physical_atk": [
+        120,
+        180,
+        240
+      ],
+      "magic_atk": [
+        120,
+        180,
+        240
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        2,
+        2,
+        2
+      ],
+      "mana_initial": [
+        60,
+        60,
+        60
+      ],
+      "mana_max": [
+        80,
+        80,
+        80
+      ]
+    },
+    "skill": {
+      "name": "Yo-Yo Blitz",
+      "description": "Cici menyerang 2 lawan terdekat sebanyak 4 kali dengan Yo-Yo, memberikan (+130%Total Physical ATK) Physical DMG pada setiap serangan.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "130%",
+            "130%",
+            "170%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Luminexus",
+      "Weapon Master"
+    ]
+  },
+  {
+    "hero_name": "Floryn",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3100,
+        5580,
+        13795
+      ],
+      "physical_atk": [
+        130,
+        195,
+        295
+      ],
+      "magic_atk": [
+        130,
+        195,
+        295
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        30,
+        30,
+        30
+      ],
+      "mana_max": [
+        50,
+        50,
+        50
+      ]
+    },
+    "skill": {
+      "name": "Sprout",
+      "description": "Floryn melempar gumpalan energi ke depan yang meledak saat mengenai lawan, memberikan (+740%Total Magic ATK) Magic DMG ke lawan di sekitar dan menyebabkan stun selama 0.6 detik. (DMG berkurang seiring dengan jumlah lawan yang terkena.)",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "740%",
+            "740%",
+            "1940%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Luminexus"
+    ]
+  },
+  {
+    "hero_name": "Masha",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2576,
+        4637,
+        8758
+      ],
+      "physical_atk": [
+        145,
+        220,
+        290
+      ],
+      "magic_atk": [
+        145,
+        220,
+        290
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Thunderclap",
+      "description": "Masha memberikan (+330% Total Physical ATK) Physical DMG Basic ATK ke target saat ini dan lawan yang bersebelahan (DMG berkurang seiring dengan jumlah lawan yang terkena), kemudian mendapatkan 100% ATK Speed dan 15% Lifesteal selama 3 detik.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "330%",
+            "330%",
+            "460%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Luminexus",
+      "Bruiser"
+    ]
+  },
+  {
+    "hero_name": "Nolan",
+    "cost": 1,
+    "base_stats": {
+      "hp": [
+        1840,
+        3312,
+        5520
+      ],
+      "physical_atk": [
+        110,
+        165,
+        220
+      ],
+      "magic_atk": [
+        110,
+        165,
+        220
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Expansion",
+      "description": "Nolan menciptakan Retakan, memberikan (+320% Total Physical ATK) Physical DMG ke target dan meningkatkan DMG yang diterima target sebesar 10% selama 10 detik.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "320%",
+            "320%",
+            "450%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Luminexus",
+      "Swiftblade"
+    ]
+  },
+  {
+    "hero_name": "Rafaela",
+    "cost": 5,
+    "base_stats": {
+      "hp": [
+        3565,
+        6417,
+        44206
+      ],
+      "physical_atk": [
+        175,
+        265,
+        560
+      ],
+      "magic_atk": [
+        175,
+        265,
+        560
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        20,
+        20,
+        20
+      ],
+      "mana_max": [
+        40,
+        40,
+        40
+      ]
+    },
+    "skill": {
+      "name": "Light of Retribution",
+      "description": "Rafaela melepaskan kekuatan Holy Light untuk menyerang lawan terdekat 5 kali (memprioritaskan target berbeda), memberikan (+100%Total Magic ATK) Magic DMG. DMG berikutnya ke target yang sama berkurang sebesar 40%. Pasif: Rafaela langsung menggunakan skill-nya 1 kali saat pertarungan dimulai. Efek Bintang 3: Memulihkan 8% Max HP ke semua rekan saat menggunakan skill. 100% pemulihan berlebih dikonversi menjadi Shield.",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "100%",
+            "100%",
+            "140%"
+          ]
+        },
+        {
+          "name": "Jumlah Target",
+          "values": [
+            "5",
+            "7",
+            "13"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Luminexus",
+      "Stargazer"
+    ]
+  },
+  {
+    "hero_name": "Valentina",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3100,
+        5580,
+        13795
+      ],
+      "physical_atk": [
+        130,
+        195,
+        295
+      ],
+      "magic_atk": [
+        130,
+        195,
+        295
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Arcane Shade",
+      "description": "Valentina menembakkan 6 Shadow Bolt, masing-masing mengenai satu lawan di sekitarnya. Jika jumlah lawan di sekitar lebih sedikit, Shadow Bolt yang tersisa akan menargetkan lawan secara acak. Masing-masing Shadow Bolt memberikan (+250%Total Magic ATK) Magic DMG.",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "250%",
+            "250%",
+            "550%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Luminexus",
+      "Mage"
+    ]
+  },
+  {
+    "hero_name": "Iori Yagami",
+    "cost": 5,
+    "base_stats": {
+      "hp": [
+        4048,
+        7286,
+        50195
+      ],
+      "physical_atk": [
+        240,
+        360,
+        770
+      ],
+      "magic_atk": [
+        240,
+        360,
+        770
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        40,
+        40,
+        20
+      ],
+      "mana_max": [
+        60,
+        60,
+        60
+      ]
+    },
+    "skill": {
+      "name": "The Way of Dragon",
+      "description": "Iori Yagami menjadi Kebal Crowd Control dan melakukan tendangan, memberikan (+70% Total Physical ATK) Physical DMG ke target dan menyebabkan airborne ke petak kosong terjauh di belakang target. Dia kemudian berpindah ke lokasi target, memberikan (+650% Total Physical ATK) Physical DMG. Pasif: ATK setelah berpindah bisa mengaktifkan Efek Basic ATK. Saat mengaktifkan efek Sinergi Bruiser, memberikan (+60% Total Physical ATK) Physical DMG tambahan. Memulihkan sejumlah Mana jika skill batal digunakan. Pasif: Ketika mencapai Bintang 3, penggunaan skill memberikan (+400% Total Physical ATK) Physical DMG ke 3 lawan acak (maks 2 serangan setiap target).",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "70%",
+            "80%",
+            "370%"
+          ]
+        },
+        {
+          "name": "DMG Tambahan untuk Hero Bruiser",
+          "values": [
+            "60%",
+            "65%",
+            "170%"
+          ]
+        },
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "650%",
+            "700%",
+            "1500%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Mortal Rival",
+      "KOF",
+      "Bruiser"
+    ]
+  },
+  {
+    "hero_name": "Kyo Kusanagi",
+    "cost": 5,
+    "base_stats": {
+      "hp": [
+        3565,
+        6417,
+        44206
+      ],
+      "physical_atk": [
+        175,
+        265,
+        560
+      ],
+      "magic_atk": [
+        175,
+        265,
+        560
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        50,
+        50,
+        20
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Burst Fireball",
+      "description": "Kyo Kusanagi menembakkan 4 Burst Fireball ke lawan yang berbeda, masing-masing memberikan (+130%Total Magic ATK) Magic DMG ledakan ke lawan dalam jarak 9 petak dan meninggalkan api. Api tersebut memberikan (+20%Total Magic ATK) Magic DMG ke lawan dalam jarak 9 petak sebanyak 3 kali selama 1 detik. kemudian memberikan (+130%Total Magic ATK) Magic DMG lagi. (DMG berkurang seiring dengan jumlah lawan yang terkena.)",
+      "skill_attributes": [
+        {
+          "name": "DMG Detonasi",
+          "values": [
+            "130%",
+            "135%",
+            "400%"
+          ]
+        },
+        {
+          "name": "DMG Berkelanjutan",
+          "values": [
+            "20%",
+            "25%",
+            "70%"
+          ]
+        },
+        {
+          "name": "DMG Akhir",
+          "values": [
+            "130%",
+            "135%",
+            "400%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Mortal Rival",
+      "KOF",
+      "Mage"
+    ]
+  },
+  {
+    "hero_name": "Julian",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2170,
+        3906,
+        7378
+      ],
+      "physical_atk": [
+        105,
+        160,
+        210
+      ],
+      "magic_atk": [
+        105,
+        160,
+        210
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        40,
+        40,
+        40
+      ],
+      "mana_max": [
+        60,
+        60,
+        60
+      ]
+    },
+    "skill": {
+      "name": "Enhanced Scythe",
+      "description": "Julian melemparkan sabit yang kuat ke depan, memberikan (+430% Total Magic ATK) Magic DMG ke lawan pertama yang terkena. Sabit tersebut bertahan di tempat, memberikan (+50% Total Magic ATK) Magic DMG ke unit di sekitar setiap 0.25 detik selama 2 detik. Saat skill digunakan, Julian juga mendapatkan Shield sebesar 10% Max HP selama 4 detik.",
+      "skill_attributes": [
+        {
+          "name": "DMG Dasar",
+          "values": [
+            "430%",
+            "430%",
+            "660%"
+          ]
+        },
+        {
+          "name": "DMG Setiap Serangan",
+          "values": [
+            "50%",
+            "50%",
+            "70%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Mystic Meow",
+      "Phasewarper",
+      "Mage"
+    ]
+  },
+  {
+    "hero_name": "Lesley",
+    "cost": 5,
+    "base_stats": {
+      "hp": [
+        3565,
+        6417,
+        44206
+      ],
+      "physical_atk": [
+        265,
+        395,
+        850
+      ],
+      "magic_atk": [
+        265,
+        395,
+        850
+      ],
+      "atk_speed": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "attack_range": [
+        18,
+        18,
+        18
+      ],
+      "mana_initial": [
+        20,
+        20,
+        20
+      ],
+      "mana_max": [
+        40,
+        40,
+        40
+      ]
+    },
+    "skill": {
+      "name": "Ultimate Snipe",
+      "description": "Lesley menembakkan peluru mematikan ke target, memberikan (+200%Total Physical ATK) Physical DMG, dan memanggil 4 Leonin untuk menyerang lawan acak, masing-masing memberikan (+100%Total Physical ATK) Physical DMG. (Semua DMG bisa mengaktifkan Efek Basic ATK.) Pasif: Lesley mendapatkan 45% Critical Chance. Setiap 1% ATK Speed tambahan dikonversi menjadi 2% Critical DMG (Critical DMG Maks: 600%). Basic ATK-nya menargetkan lawan terjauh, tapi peluru bisa dihalangi oleh lawan pertama yang terkena. Saat mencapai Bintang 3, jumlah Leonin digandakan.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "200%",
+            "200%",
+            "1000%"
+          ]
+        },
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "100%",
+            "100%",
+            "200%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Mystic Meow",
+      "Marksman"
+    ]
+  },
+  {
+    "hero_name": "Silvanna",
+    "cost": 1,
+    "base_stats": {
+      "hp": [
+        1840,
+        3312,
+        5520
+      ],
+      "physical_atk": [
+        110,
+        165,
+        220
+      ],
+      "magic_atk": [
+        110,
+        165,
+        220
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Knightess' Resolve",
+      "description": "Silvanna mendapatkan 250 Shield dan 30% ATK Speed selama 3 detik.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Shield",
+          "values": [
+            "250",
+            "360",
+            "430"
+          ]
+        },
+        {
+          "name": "Bonus ATK Speed",
+          "values": [
+            "30%",
+            "40%",
+            "60%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Mystic Meow",
+      "Dauntless"
+    ]
+  },
+  {
+    "hero_name": "Brody",
+    "cost": 1,
+    "base_stats": {
+      "hp": [
+        1550,
+        2790,
+        4650
+      ],
+      "physical_atk": [
+        90,
+        135,
+        180
+      ],
+      "magic_atk": [
+        90,
+        135,
+        180
+      ],
+      "atk_speed": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        0,
+        0,
+        0
+      ],
+      "mana_max": [
+        0,
+        0,
+        0
+      ]
+    },
+    "skill": {
+      "name": "Abyss Corrosion",
+      "description": "Pasif: Saat pertarungan dimulai, Brody memberikan 10% ATK Speed ke diri sendiri dan rekan dalam jarak 1 petak di kiri dan kanannya. Basic ATK Brody membuat lawan menerima (+20%Total Physical ATK) Physical DMG tambahan dari Basic ATK dia berikutnya selama 4 detik. Maksimal 5 stack.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "20%",
+            "25%",
+            "30%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Neobeasts",
+      "Marksman"
+    ]
+  },
+  {
+    "hero_name": "Fredrinn",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2576,
+        4637,
+        8758
+      ],
+      "physical_atk": [
+        145,
+        220,
+        290
+      ],
+      "magic_atk": [
+        145,
+        220,
+        290
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Piercing Strike",
+      "description": "Fredrinn menusukkan pedangnya ke depan, memberikan (+280%Total Physical ATK) Physical DMG (DMG berkurang seiring dengan jumlah lawan yang terkena) dan mendapatkan Shield sebesar 10% Max HP-nya selama 4 detik. Fredrinn juga memperkuat Basic ATK berikutnya, meningkatkan jangkauannya dan memberikan (+420%Total Physical ATK) Physical DMG.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "280%",
+            "280%",
+            "410%"
+          ]
+        },
+        {
+          "name": "Persentase Shield",
+          "values": [
+            "10%",
+            "10%",
+            "12%"
+          ]
+        },
+        {
+          "name": "DMG Basic ATK",
+          "values": [
+            "420%",
+            "420%",
+            "575%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Neobeasts",
+      "Weapon Master"
+    ]
+  },
+  {
+    "hero_name": "Gatotkaca",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        2233,
+        4019,
+        7235
+      ],
+      "physical_atk": [
+        115,
+        175,
+        230
+      ],
+      "magic_atk": [
+        115,
+        175,
+        230
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        60,
+        60,
+        60
+      ],
+      "mana_max": [
+        80,
+        80,
+        80
+      ]
+    },
+    "skill": {
+      "name": "Blast Iron Fist",
+      "description": "Gatotkaca melakukan serangan berat, melancarkan Basic ATK yang diperkuat yang memulihkan 400 HP dan memberikan (+400% Total Magic ATK) Magic DMG.",
+      "skill_attributes": [
+        {
+          "name": "HP Regen",
+          "values": [
+            "400",
+            "700",
+            "1500"
+          ]
+        },
+        {
+          "name": "Basic ATK yang Diperkuat",
+          "values": [
+            "400%",
+            "400%",
+            "550%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Neobeasts",
+      "Defender",
+      "Bruiser"
+    ]
+  },
+  {
+    "hero_name": "Ling",
+    "cost": 5,
+    "base_stats": {
+      "hp": [
+        3643,
+        6558,
+        45176
+      ],
+      "physical_atk": [
+        240,
+        360,
+        770
+      ],
+      "magic_atk": [
+        240,
+        360,
+        770
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        70,
+        70,
+        20
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Soaring Plume",
+      "description": "Saat pertarungan dimulai, Ling memanggil Skyscraper dan berdiri di atasnya, memulihkan 10 Mana setiap 0.5 detik. Ketika Mana penuh, dia menyerang ke area dengan lawan terbanyak, memberikan (+150%Total Physical ATK) Physical DMG di area kecil (DMG berkurang seiring dengan jumlah lawan yang terkena) dan memanggil Skyscraper di lokasi baru. Jika Ling tidak memiliki rekan, dia menyerang langsung ke area dengan lawan terbanyak untuk menggunakan Tempest of Blades, memberikan (+380%Total Physical ATK) Physical DMG di area medium (DMG berkurang seiring dengan jumlah lawan yang terkena). Skill-nya kemudian berubah menjadi: Menyerang dan menusuk lawan saat ini, memberikan (+460%Total Physical ATK) Physical DMG. Pasif: Ling tidak bisa menggunakan Basic ATK dan tidak menerima DMG saat berada di atas Skyscraper. Ketika mencapai Bintang 3, dia juga menggunakan Tempest of Blades ketika menyerang dari Skyscraper. Jika dia mendarat tanpa rekan, skill-nya berubah menjadi Tempest of Blades.",
+      "skill_attributes": [
+        {
+          "name": "DMG Area",
+          "values": [
+            "150%",
+            "160%",
+            "230%"
+          ]
+        },
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "380%",
+            "420%",
+            "1225%"
+          ]
+        },
+        {
+          "name": "DMG Tusukan",
+          "values": [
+            "460%",
+            "500%",
+            "/"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Neobeasts",
+      "Swiftblade"
+    ]
+  },
+  {
+    "hero_name": "Lylia",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        1705,
+        3069,
+        5524
+      ],
+      "physical_atk": [
+        90,
+        135,
+        180
+      ],
+      "magic_atk": [
+        90,
+        135,
+        180
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        30,
+        30,
+        30
+      ],
+      "mana_max": [
+        50,
+        50,
+        50
+      ]
+    },
+    "skill": {
+      "name": "Magic Shockwave",
+      "description": "Lylia memanggil Gloom untuk menyerang ke depan, memberikan (+720%Total Magic ATK) Magic DMG ke lawan di sepanjang jalur. (DMG berkurang untuk setiap lawan yang ditembus.)",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "720%",
+            "720%",
+            "875%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Neobeasts",
+      "Mage"
+    ]
+  },
+  {
+    "hero_name": "Pharsa",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3100,
+        5580,
+        13795
+      ],
+      "physical_atk": [
+        130,
+        195,
+        295
+      ],
+      "magic_atk": [
+        130,
+        195,
+        295
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Feathered Air Strike",
+      "description": "Pharsa melayang ke udara. Selama 4 detik berikutnya, dia melancarkan hingga 4 serangan, masing-masing memberikan (+370%Total Magic ATK) Magic DMG ke lawan dalam jangkauan. (DMG berkurang seiring dengan jumlah lawan yang terkena.)",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "370%",
+            "370%",
+            "870%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Neobeasts",
+      "Stargazer"
+    ]
+  },
+  {
+    "hero_name": "Aamon",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        2024,
+        3643,
+        6558
+      ],
+      "physical_atk": [
+        120,
+        180,
+        240
+      ],
+      "magic_atk": [
+        120,
+        180,
+        240
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        40,
+        40,
+        40
+      ],
+      "mana_max": [
+        60,
+        60,
+        60
+      ]
+    },
+    "skill": {
+      "name": "Soul Shards",
+      "description": "Aamon memperkuat ATK berikutnya dengan shard, memberikan (+640%Total Magic ATK) Magic DMG.",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "640%",
+            "640%",
+            "800%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Soul Vessels",
+      "Swiftblade"
+    ]
+  },
+  {
+    "hero_name": "Cecilion",
+    "cost": 1,
+    "base_stats": {
+      "hp": [
+        1550,
+        2790,
+        4650
+      ],
+      "physical_atk": [
+        80,
+        120,
+        160
+      ],
+      "magic_atk": [
+        80,
+        120,
+        160
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        70,
+        70,
+        70
+      ],
+      "mana_max": [
+        90,
+        90,
+        90
+      ]
+    },
+    "skill": {
+      "name": "Bat Impact",
+      "description": "Cecilion memerintahkan monster kelelawar untuk menyerang target, memberikan (+1200% Total Magic ATK) Magic DMG. Pasif: Ketika pertarungan dimulai, memberikan 10 Mana ke diri sendiri dan rekan di kiri dan kanannya.",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "1200%",
+            "1200%",
+            "1500%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Soul Vessels",
+      "Mage"
+    ]
+  },
+  {
+    "hero_name": "Clint",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        1705,
+        3069,
+        5524
+      ],
+      "physical_atk": [
+        110,
+        165,
+        220
+      ],
+      "magic_atk": [
+        110,
+        165,
+        220
+      ],
+      "atk_speed": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        30,
+        30,
+        30
+      ],
+      "mana_max": [
+        50,
+        50,
+        50
+      ]
+    },
+    "skill": {
+      "name": "Quick Draw",
+      "description": "Clint menembakkan 5 peluru beruntun ke target, masing-masing memberikan (+85%Total Physical ATK) Physical DMG.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "85%",
+            "85%",
+            "110%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Soul Vessels",
+      "Phasewarper"
+    ]
+  },
+  {
+    "hero_name": "Gloo",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2842,
+        5116,
+        9663
+      ],
+      "physical_atk": [
+        135,
+        205,
+        270
+      ],
+      "magic_atk": [
+        135,
+        205,
+        270
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        80,
+        80,
+        80
+      ],
+      "mana_max": [
+        100,
+        100,
+        100
+      ]
+    },
+    "skill": {
+      "name": "Slam, Slam",
+      "description": "Gloo memperkuat Basic ATK berikutnya, memberikan (+800%Total Magic ATK) Magic DMG ke target dan menyebabkan stun selama 0.8 detik. Pasif: Saat HP di bawah 50% untuk pertama kali, sebuah Goo jatuh dan memulihkan 20% Max HP Gloo.",
+      "skill_attributes": [
+        {
+          "name": "Durasi Efek Stun",
+          "values": [
+            "0.8",
+            "1",
+            "1.2"
+          ]
+        },
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "800%",
+            "850%",
+            "1400%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Soul Vessels",
+      "Dauntless"
+    ]
+  },
+  {
+    "hero_name": "Hanabi",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3100,
+        5580,
+        15864
+      ],
+      "physical_atk": [
+        200,
+        300,
+        500
+      ],
+      "magic_atk": [
+        200,
+        300,
+        500
+      ],
+      "atk_speed": [
+        0.8,
+        0.8,
+        1.1
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        50,
+        50,
+        25
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Ninjutsu: Petal Barrage",
+      "description": "Hanabi melemparkan Higanbana ke lawan, menyebabkan immobilize secara singkat dan memberikan (+200%Total Physical ATK) Physical DMG. Higanbana kemudian mekar setelah 1 detik, memberikan (+200%Total Physical ATK) DMG ke lawan di area. Pasif: Setelah mengenai target, Basic ATK Hanabi memantul ke lawan lain di sekitarnya, memberikan (+30%Total Physical ATK) Physical DMG hingga 3 kali. Ketika mencapai Bintang 3, dia mendapatkan 10% / 25% / 40% DMG dan HP tambahan berdasarkan jumlah Sinergi Soul Vessels yang aktif.",
+      "skill_attributes": [
+        {
+          "name": "DMG Pantulan",
+          "values": [
+            "30%",
+            "30%",
+            "35%"
+          ]
+        },
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "200%",
+            "200%",
+            "600%"
+          ]
+        },
+        {
+          "name": "DMG Ledakan",
+          "values": [
+            "200%",
+            "200%",
+            "600%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Soul Vessels"
+    ]
+  },
+  {
+    "hero_name": "Cyclops",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3100,
+        5580,
+        13795
+      ],
+      "physical_atk": [
+        130,
+        195,
+        295
+      ],
+      "magic_atk": [
+        130,
+        195,
+        295
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        30,
+        30,
+        30
+      ],
+      "mana_max": [
+        50,
+        50,
+        50
+      ]
+    },
+    "skill": {
+      "name": "Planets Attack",
+      "description": "Cyclops mengeluarkan 4 Starlit Sphere untuk menyerang lawan, masing-masing memberikan (+205%Total Magic ATK) Magic DMG. Setiap penggunaan skill menambah jumlah Starlit Sphere yang dikeluarkan berikutnya sebanyak 1. Maksimal 20 Starlit Sphere.",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "205%",
+            "205%",
+            "510%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Stargazer",
+      "Toy Mischief"
+    ]
+  },
+  {
+    "hero_name": "Xavier",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2170,
+        3906,
+        7378
+      ],
+      "physical_atk": [
+        115,
+        175,
+        230
+      ],
+      "magic_atk": [
+        115,
+        175,
+        230
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        40,
+        40,
+        40
+      ],
+      "mana_max": [
+        60,
+        60,
+        60
+      ]
+    },
+    "skill": {
+      "name": "Mystic Field",
+      "description": "Xavier memanggil Mystic Barrier, memberikan (+140%Total Magic ATK) Magic DMG ke target dan lawan dalam jarak 1 petak di kiri dan kanannya. Dia kemudian melepaskan Mystic Magic ke arah saat ini, memberikan (+150%Total Magic ATK) Magic DMG dan mengaktifkan Mystic Barrier untuk menciptakan zona terlarang. memberikan (+345%Total Magic ATK) Magic DMG ke lawan dalam jarak 9 petak. (Semua DMG berkurang seiring dengan jumlah lawan yang terkena.)",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "140%",
+            "140%",
+            "200%"
+          ]
+        },
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "150%",
+            "160%",
+            "240%"
+          ]
+        },
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "345%",
+            "345%",
+            "525%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Stargazer",
+      "Beyond the Clouds"
+    ]
+  },
+  {
+    "hero_name": "Aulus",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2576,
+        4637,
+        8758
+      ],
+      "physical_atk": [
+        145,
+        220,
+        290
+      ],
+      "magic_atk": [
+        145,
+        220,
+        290
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        20,
+        20,
+        20
+      ],
+      "mana_max": [
+        40,
+        40,
+        40
+      ]
+    },
+    "skill": {
+      "name": "The Power of Axe",
+      "description": "Aulus memberikan (+355% Total Physical ATK) Physical DMG ke lawan di area. (DMG berkurang seiring dengan jumlah lawan yang terkena.)",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "355%",
+            "355%",
+            "560%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Toy Mischief",
+      "Weapon Master"
+    ]
+  },
+  {
+    "hero_name": "Barats",
+    "cost": 4,
+    "base_stats": {
+      "hp": [
+        3857,
+        6943,
+        17164
+      ],
+      "physical_atk": [
+        175,
+        265,
+        395
+      ],
+      "magic_atk": [
+        175,
+        265,
+        395
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        30,
+        30,
+        30
+      ],
+      "mana_max": [
+        50,
+        50,
+        50
+      ]
+    },
+    "skill": {
+      "name": "Missile \"Expert\"",
+      "description": "Barats menembakkan misil ke depan, memberikan (+140%Total Physical ATK) Physical DMG. Saat mendarat, semburan api muncul dari belakang misil, memberikan (+120%Total Physical ATK) Physical DMG ke lawan di area yang lebih luas. (Semua DMG berkurang seiring dengan jumlah lawan yang terkena.) Pasif: Setiap kali Barats memberikan DMG, Detona membesar dan mendapatkan 8 Hybrid DEF. Stack Maksimum: 5.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "140%",
+            "140%",
+            "450%"
+          ]
+        },
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "120%",
+            "120%",
+            "380%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Toy Mischief",
+      "Dauntless"
+    ]
+  },
+  {
+    "hero_name": "Harith",
+    "cost": 3,
+    "base_stats": {
+      "hp": [
+        2170,
+        3906,
+        7378
+      ],
+      "physical_atk": [
+        105,
+        160,
+        210
+      ],
+      "magic_atk": [
+        105,
+        160,
+        210
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        4,
+        4,
+        4
+      ],
+      "mana_initial": [
+        50,
+        50,
+        50
+      ],
+      "mana_max": [
+        70,
+        70,
+        70
+      ]
+    },
+    "skill": {
+      "name": "Chrono Dash",
+      "description": "Harith berpindah ke posisi aman dan memperkuat Basic ATK berikutnya untuk memberikan (+520%Total Magic ATK) Magic DMG.",
+      "skill_attributes": [
+        {
+          "name": "Magic Bonus",
+          "values": [
+            "520%",
+            "850%",
+            "1850%"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Toy Mischief",
+      "Mage"
+    ]
+  },
+  {
+    "hero_name": "Jawhead",
+    "cost": 1,
+    "base_stats": {
+      "hp": [
+        1840,
+        3312,
+        5520
+      ],
+      "physical_atk": [
+        110,
+        165,
+        220
+      ],
+      "magic_atk": [
+        110,
+        165,
+        220
+      ],
+      "atk_speed": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        80,
+        80,
+        80
+      ],
+      "mana_max": [
+        100,
+        100,
+        100
+      ]
+    },
+    "skill": {
+      "name": "Ejector",
+      "description": "Jawhead menyebabkan airborne ke target, memberikan (+100%Total Physical ATK) Physical DMG dan menyebabkan stun selama 0.6 detik ketika mendarat. Pasif: Ketika pertarungan dimulai, memberikan 100 Shield ke diri sendiri dan hero rekan di kiri dan kanan.",
+      "skill_attributes": [
+        {
+          "name": "Bonus Physical",
+          "values": [
+            "100%",
+            "160%",
+            "280%"
+          ]
+        },
+        {
+          "name": "Shield",
+          "values": [
+            "100",
+            "150",
+            "200"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Toy Mischief",
+      "Bruiser"
+    ]
+  },
+  {
+    "hero_name": "Uranus",
+    "cost": 2,
+    "base_stats": {
+      "hp": [
+        2233,
+        4019,
+        7235
+      ],
+      "physical_atk": [
+        115,
+        175,
+        230
+      ],
+      "magic_atk": [
+        115,
+        175,
+        230
+      ],
+      "atk_speed": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "attack_range": [
+        1,
+        1,
+        1
+      ],
+      "mana_initial": [
+        60,
+        60,
+        60
+      ],
+      "mana_max": [
+        80,
+        80,
+        80
+      ]
+    },
+    "skill": {
+      "name": "Energy Awakening",
+      "description": "Uranus melepaskan energi yang tersimpan untuk mendapatkan 930 Shield selama 4 detik.",
+      "skill_attributes": [
+        {
+          "name": "Shield",
+          "values": [
+            "930",
+            "1630",
+            "3900"
+          ]
+        }
+      ]
+    },
+    "synergies": [
+      "Toy Mischief",
+      "Defender"
+    ]
+  }
+]
