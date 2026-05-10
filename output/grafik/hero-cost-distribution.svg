@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">Distribusi Cost Hero</title>
+  <desc id="desc">Jumlah hero pada setiap cost.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef8ff"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1c468b" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+  <style>
+    .bg { fill: url(#paper); }
+    .title { fill: #18396f; font: 800 32px 'Segoe UI', Arial, sans-serif; }
+    .subtitle { fill: #5e708e; font: 600 15px 'Segoe UI', Arial, sans-serif; }
+    .axis { stroke: rgba(43, 91, 167, 0.22); stroke-width: 1; }
+    .grid { stroke: rgba(43, 91, 167, 0.10); stroke-width: 1; }
+    .label { fill: #31527f; font: 700 13px 'Segoe UI', Arial, sans-serif; }
+    .small { fill: #5e708e; font: 600 12px 'Segoe UI', Arial, sans-serif; }
+    .value { fill: #18396f; font: 800 13px 'Segoe UI', Arial, sans-serif; }
+    .legend { fill: #31527f; font: 700 13px 'Segoe UI', Arial, sans-serif; }
+  </style>
+  <rect class="bg" width="1120" height="520" rx="22"/>
+  <rect x="18" y="18" width="1084" height="484" rx="18" fill="rgba(255,255,255,0.58)" filter="url(#softShadow)"/>
+  <text class="title" x="44" y="62">Distribusi Cost Hero</text>
+  <text class="subtitle" x="44" y="88">Jumlah hero pada setiap cost.</text>
+  <line class="axis" x1="86" y1="124" x2="86" y2="432"/>
+  <line class="axis" x1="86" y1="432" x2="1066" y2="432"/>
+  <line class="grid" x1="86" y1="355.0" x2="1066" y2="355.0"/>
+  <line class="grid" x1="86" y1="278.0" x2="1066" y2="278.0"/>
+  <line class="grid" x1="86" y1="201.0" x2="1066" y2="201.0"/>
+  <line class="grid" x1="86" y1="124.0" x2="1066" y2="124.0"/>
+  <rect x="86.0" y="226.7" width="183.2" height="205.3" rx="8" fill="#278dff"/>
+  <text class="value" x="177.6" y="216.7" text-anchor="middle">8</text>
+  <text class="label" x="177.6" y="466" text-anchor="middle">1</text>
+  <rect x="285.2" y="124.0" width="183.2" height="308.0" rx="8" fill="#35d598"/>
+  <text class="value" x="376.8" y="114.0" text-anchor="middle">12</text>
+  <text class="label" x="376.8" y="466" text-anchor="middle">2</text>
+  <rect x="484.4" y="124.0" width="183.2" height="308.0" rx="8" fill="#ffc84f"/>
+  <text class="value" x="576.0" y="114.0" text-anchor="middle">12</text>
+  <text class="label" x="576.0" y="466" text-anchor="middle">3</text>
+  <rect x="683.6" y="124.0" width="183.2" height="308.0" rx="8" fill="#ff70b8"/>
+  <text class="value" x="775.2" y="114.0" text-anchor="middle">12</text>
+  <text class="label" x="775.2" y="466" text-anchor="middle">4</text>
+  <rect x="882.8" y="226.7" width="183.2" height="205.3" rx="8" fill="#8b5cf6"/>
+  <text class="value" x="974.4" y="216.7" text-anchor="middle">8</text>
+  <text class="label" x="974.4" y="466" text-anchor="middle">5</text>
+</svg>

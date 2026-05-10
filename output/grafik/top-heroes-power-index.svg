@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="618" viewBox="0 0 1120 618" role="img" aria-labelledby="title desc">
+  <title id="title">Top Hero Power Index</title>
+  <desc id="desc">Ranking berdasarkan formula power_index di data/heroes.py.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef8ff"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1c468b" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+  <style>
+    .bg { fill: url(#paper); }
+    .title { fill: #18396f; font: 800 32px 'Segoe UI', Arial, sans-serif; }
+    .subtitle { fill: #5e708e; font: 600 15px 'Segoe UI', Arial, sans-serif; }
+    .axis { stroke: rgba(43, 91, 167, 0.22); stroke-width: 1; }
+    .grid { stroke: rgba(43, 91, 167, 0.10); stroke-width: 1; }
+    .label { fill: #31527f; font: 700 13px 'Segoe UI', Arial, sans-serif; }
+    .small { fill: #5e708e; font: 600 12px 'Segoe UI', Arial, sans-serif; }
+    .value { fill: #18396f; font: 800 13px 'Segoe UI', Arial, sans-serif; }
+    .legend { fill: #31527f; font: 700 13px 'Segoe UI', Arial, sans-serif; }
+  </style>
+  <rect class="bg" width="1120" height="618" rx="22"/>
+  <rect x="18" y="18" width="1084" height="582" rx="18" fill="rgba(255,255,255,0.58)" filter="url(#softShadow)"/>
+  <text class="title" x="44" y="62">Top Hero Power Index</text>
+  <text class="subtitle" x="44" y="88">Ranking berdasarkan formula power_index di data/heroes.py.</text>
+  <line class="axis" x1="260" y1="108" x2="260" y2="576"/>
+  <line class="axis" x1="260" y1="576" x2="1024" y2="576"/>
+  <line class="grid" x1="451.0" y1="108" x2="451.0" y2="576"/>
+  <line class="grid" x1="642.0" y1="108" x2="642.0" y2="576"/>
+  <line class="grid" x1="833.0" y1="108" x2="833.0" y2="576"/>
+  <line class="grid" x1="1024.0" y1="108" x2="1024.0" y2="576"/>
+  <text class="label" x="246" y="139" text-anchor="end">Lesley</text>
+  <rect x="260" y="122" width="764.0" height="24" rx="8" fill="#278dff"/>
+  <text class="value" x="1034.0" y="139">2.401.9</text>
+  <text class="label" x="246" y="176" text-anchor="end">Ling</text>
+  <rect x="260" y="159" width="758.0" height="24" rx="8" fill="#35d598"/>
+  <text class="value" x="1028.0" y="176">2.383.1</text>
+  <text class="label" x="246" y="213" text-anchor="end">Iori Yagami</text>
+  <rect x="260" y="196" width="718.7" height="24" rx="8" fill="#ffc84f"/>
+  <text class="value" x="988.7" y="213">2.259.5</text>
+  <text class="label" x="246" y="250" text-anchor="end">Roger</text>
+  <rect x="260" y="233" width="715.9" height="24" rx="8" fill="#ff70b8"/>
+  <text class="value" x="985.9" y="250">2.250.8</text>
+  <text class="label" x="246" y="287" text-anchor="end">Lancelot</text>
+  <rect x="260" y="270" width="710.9" height="24" rx="8" fill="#8b5cf6"/>
+  <text class="value" x="980.9" y="287">2.234.9</text>
+  <text class="label" x="246" y="324" text-anchor="end">Kyo Kusanagi</text>
+  <rect x="260" y="307" width="662.0" height="24" rx="8" fill="#ff8f3d"/>
+  <text class="value" x="932.0" y="324">2.081.1</text>
+  <text class="label" x="246" y="361" text-anchor="end">Ruby</text>
+  <rect x="260" y="344" width="661.6" height="24" rx="8" fill="#06b6d4"/>
+  <text class="value" x="931.6" y="361">2.079.9</text>
+  <text class="label" x="246" y="398" text-anchor="end">Hayabusa</text>
+  <rect x="260" y="381" width="649.9" height="24" rx="8" fill="#14b8a6"/>
+  <text class="value" x="919.9" y="398">2.043.3</text>
+  <text class="label" x="246" y="435" text-anchor="end">Hanabi</text>
+  <rect x="260" y="418" width="635.0" height="24" rx="8" fill="#ef4444"/>
+  <text class="value" x="905.0" y="435">1.996.4</text>
+  <text class="label" x="246" y="472" text-anchor="end">Edith</text>
+  <rect x="260" y="455" width="635.0" height="24" rx="8" fill="#64748b"/>
+  <text class="value" x="905.0" y="472">1.996.3</text>
+  <text class="label" x="246" y="509" text-anchor="end">Rafaela</text>
+  <rect x="260" y="492" width="613.9" height="24" rx="8" fill="#278dff"/>
+  <text class="value" x="883.9" y="509">1.930.1</text>
+  <text class="label" x="246" y="546" text-anchor="end">Floryn</text>
+  <rect x="260" y="529" width="586.3" height="24" rx="8" fill="#35d598"/>
+  <text class="value" x="856.3" y="546">1.843.1</text>
+</svg>
