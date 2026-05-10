@@ -1,0 +1,331 @@
+{
+  "generated_at": "2026-05-10T14:54:41",
+  "seed": 20260510,
+  "samples": 30,
+  "charts": [
+    {
+      "file": "hero-cost-distribution.svg",
+      "title": "Distribusi Cost Hero",
+      "subtitle": "Jumlah hero pada setiap cost.",
+      "data": {
+        "1": 8,
+        "2": 12,
+        "3": 12,
+        "4": 12,
+        "5": 8
+      }
+    },
+    {
+      "file": "hero-role-distribution.svg",
+      "title": "Distribusi Role Hero",
+      "subtitle": "Role hasil inferensi dari dataset hero.",
+      "data": {
+        "Carry": 25,
+        "Fighter": 5,
+        "Flex": 8,
+        "Support": 3,
+        "Tank": 11
+      }
+    },
+    {
+      "file": "top-heroes-power-index.svg",
+      "title": "Top Hero Power Index",
+      "subtitle": "Ranking berdasarkan formula power_index di data/heroes.py.",
+      "data": [
+        [
+          "Lesley",
+          2401.9325
+        ],
+        [
+          "Ling",
+          2383.098
+        ],
+        [
+          "Iori Yagami",
+          2259.4586666666664
+        ],
+        [
+          "Roger",
+          2250.834
+        ],
+        [
+          "Lancelot",
+          2234.902857142857
+        ],
+        [
+          "Kyo Kusanagi",
+          2081.1142857142854
+        ],
+        [
+          "Ruby",
+          2079.8974000000003
+        ],
+        [
+          "Hayabusa",
+          2043.2878
+        ],
+        [
+          "Hanabi",
+          1996.3999999999999
+        ],
+        [
+          "Edith",
+          1996.2600000000002
+        ],
+        [
+          "Rafaela",
+          1930.1425000000002
+        ],
+        [
+          "Floryn",
+          1843.1280000000004
+        ]
+      ]
+    },
+    {
+      "file": "synergy-hero-count.svg",
+      "title": "Jumlah Hero per Sinergi",
+      "subtitle": "Sinergi dengan pool hero terbanyak lebih mudah dicapai.",
+      "data": [
+        [
+          "KOF",
+          7
+        ],
+        [
+          "Bruiser",
+          6
+        ],
+        [
+          "Dauntless",
+          6
+        ],
+        [
+          "Defender",
+          6
+        ],
+        [
+          "Exorcist",
+          6
+        ],
+        [
+          "Heartbond",
+          6
+        ],
+        [
+          "Luminexus",
+          6
+        ],
+        [
+          "Mage",
+          6
+        ],
+        [
+          "Marksman",
+          6
+        ],
+        [
+          "Neobeasts",
+          6
+        ],
+        [
+          "Soul Vessels",
+          6
+        ],
+        [
+          "Stargazer",
+          6
+        ],
+        [
+          "Swiftblade",
+          6
+        ],
+        [
+          "Toy Mischief",
+          6
+        ],
+        [
+          "Weapon Master",
+          6
+        ],
+        [
+          "Glory League",
+          5
+        ],
+        [
+          "Phasewarper",
+          4
+        ],
+        [
+          "Beyond the Clouds",
+          3
+        ],
+        [
+          "Mystic Meow",
+          3
+        ],
+        [
+          "Scavenger",
+          3
+        ],
+        [
+          "Mortal Rival",
+          2
+        ]
+      ]
+    },
+    {
+      "file": "profile-final-power.svg",
+      "title": "Rata-rata Final Power",
+      "subtitle": "Perbandingan strategi dari 30 simulasi.",
+      "data": {
+        "farming": 26183.441,
+        "neobeast": 25699.793333333335,
+        "normal": 27171.360333333334
+      }
+    },
+    {
+      "file": "profile-commander-hp.svg",
+      "title": "Rata-rata HP Commander",
+      "subtitle": "Sisa HP akhir dari 30 simulasi.",
+      "data": {
+        "farming": 100,
+        "neobeast": 100,
+        "normal": 100
+      }
+    },
+    {
+      "file": "profile-active-synergies.svg",
+      "title": "Rata-rata Sinergi Aktif",
+      "subtitle": "Jumlah sinergi aktif pada final board dari 30 simulasi.",
+      "data": {
+        "farming": 4.666666666666667,
+        "neobeast": 4.9,
+        "normal": 4.466666666666667
+      }
+    },
+    {
+      "file": "checkpoint-gold-timeline.svg",
+      "title": "Timeline Gold per Checkpoint",
+      "subtitle": "Rata-rata gold setelah keputusan pembelian dari 30 simulasi.",
+      "data": {
+        "farming": [
+          32.96666666666667,
+          54.733333333333334,
+          111.86666666666666,
+          171.43333333333334,
+          310.3666666666667,
+          456.3333333333333
+        ],
+        "neobeast": [
+          32.36666666666667,
+          53.36666666666667,
+          107.23333333333333,
+          163.36666666666667,
+          307.6333333333333,
+          465.2
+        ],
+        "normal": [
+          32.8,
+          54.166666666666664,
+          112.73333333333333,
+          171.5,
+          312.76666666666665,
+          458
+        ]
+      }
+    },
+    {
+      "file": "adaptive-weight-farming.svg",
+      "title": "Bobot Adaptive - Farming / Scavenger",
+      "subtitle": "Perubahan komposisi Greedy, Heuristic, dan Carry per checkpoint.",
+      "data": {
+        "greedy": [
+          0.216,
+          0.216,
+          0.156,
+          0.156,
+          0.20666666666666667,
+          0.20466666666666666
+        ],
+        "heuristic": [
+          0.67,
+          0.67,
+          0.677,
+          0.677,
+          0.5916666666666667,
+          0.5986666666666667
+        ],
+        "carry": [
+          0.113,
+          0.113,
+          0.167,
+          0.167,
+          0.20166666666666666,
+          0.19666666666666666
+        ]
+      }
+    },
+    {
+      "file": "adaptive-weight-neobeast.svg",
+      "title": "Bobot Adaptive - Stacking / Neobeasts",
+      "subtitle": "Perubahan komposisi Greedy, Heuristic, dan Carry per checkpoint.",
+      "data": {
+        "greedy": [
+          0.216,
+          0.216,
+          0.156,
+          0.156,
+          0.21,
+          0.21
+        ],
+        "heuristic": [
+          0.67,
+          0.67,
+          0.677,
+          0.677,
+          0.58,
+          0.58
+        ],
+        "carry": [
+          0.113,
+          0.113,
+          0.167,
+          0.167,
+          0.21,
+          0.21
+        ]
+      }
+    },
+    {
+      "file": "adaptive-weight-normal.svg",
+      "title": "Bobot Adaptive - Normal",
+      "subtitle": "Perubahan komposisi Greedy, Heuristic, dan Carry per checkpoint.",
+      "data": {
+        "greedy": [
+          0.216,
+          0.216,
+          0.156,
+          0.156,
+          0.20133333333333334,
+          0.20266666666666666
+        ],
+        "heuristic": [
+          0.67,
+          0.67,
+          0.677,
+          0.677,
+          0.6103333333333333,
+          0.6056666666666667
+        ],
+        "carry": [
+          0.113,
+          0.113,
+          0.167,
+          0.167,
+          0.18833333333333332,
+          0.19166666666666665
+        ]
+      }
+    }
+  ]
+}

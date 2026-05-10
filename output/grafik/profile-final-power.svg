@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="360" viewBox="0 0 1120 360" role="img" aria-labelledby="title desc">
+  <title id="title">Rata-rata Final Power</title>
+  <desc id="desc">Perbandingan strategi dari 30 simulasi.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef8ff"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1c468b" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+  <style>
+    .bg { fill: url(#paper); }
+    .title { fill: #18396f; font: 800 32px 'Segoe UI', Arial, sans-serif; }
+    .subtitle { fill: #5e708e; font: 600 15px 'Segoe UI', Arial, sans-serif; }
+    .axis { stroke: rgba(43, 91, 167, 0.22); stroke-width: 1; }
+    .grid { stroke: rgba(43, 91, 167, 0.10); stroke-width: 1; }
+    .label { fill: #31527f; font: 700 13px 'Segoe UI', Arial, sans-serif; }
+    .small { fill: #5e708e; font: 600 12px 'Segoe UI', Arial, sans-serif; }
+    .value { fill: #18396f; font: 800 13px 'Segoe UI', Arial, sans-serif; }
+    .legend { fill: #31527f; font: 700 13px 'Segoe UI', Arial, sans-serif; }
+  </style>
+  <rect class="bg" width="1120" height="360" rx="22"/>
+  <rect x="18" y="18" width="1084" height="324" rx="18" fill="rgba(255,255,255,0.58)" filter="url(#softShadow)"/>
+  <text class="title" x="44" y="62">Rata-rata Final Power</text>
+  <text class="subtitle" x="44" y="88">Perbandingan strategi dari 30 simulasi.</text>
+  <line class="axis" x1="260" y1="108" x2="260" y2="318"/>
+  <line class="axis" x1="260" y1="318" x2="1024" y2="318"/>
+  <line class="grid" x1="451.0" y1="108" x2="451.0" y2="318"/>
+  <line class="grid" x1="642.0" y1="108" x2="642.0" y2="318"/>
+  <line class="grid" x1="833.0" y1="108" x2="833.0" y2="318"/>
+  <line class="grid" x1="1024.0" y1="108" x2="1024.0" y2="318"/>
+  <text class="label" x="246" y="139" text-anchor="end">Normal</text>
+  <rect x="260" y="122" width="764.0" height="24" rx="8" fill="#278dff"/>
+  <text class="value" x="1034.0" y="139">27.171</text>
+  <text class="label" x="246" y="176" text-anchor="end">Farming / Scavenger</text>
+  <rect x="260" y="159" width="736.2" height="24" rx="8" fill="#35d598"/>
+  <text class="value" x="1006.2" y="176">26.183</text>
+  <text class="label" x="246" y="213" text-anchor="end">Stacking / Neobeasts</text>
+  <rect x="260" y="196" width="722.6" height="24" rx="8" fill="#ffc84f"/>
+  <text class="value" x="992.6" y="213">25.700</text>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="951" viewBox="0 0 1120 951" role="img" aria-labelledby="title desc">
+  <title id="title">Jumlah Hero per Sinergi</title>
+  <desc id="desc">Sinergi dengan pool hero terbanyak lebih mudah dicapai.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef8ff"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1c468b" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+  <style>
+    .bg { fill: url(#paper); }
+    .title { fill: #18396f; font: 800 32px 'Segoe UI', Arial, sans-serif; }
+    .subtitle { fill: #5e708e; font: 600 15px 'Segoe UI', Arial, sans-serif; }
+    .axis { stroke: rgba(43, 91, 167, 0.22); stroke-width: 1; }
+    .grid { stroke: rgba(43, 91, 167, 0.10); stroke-width: 1; }
+    .label { fill: #31527f; font: 700 13px 'Segoe UI', Arial, sans-serif; }
+    .small { fill: #5e708e; font: 600 12px 'Segoe UI', Arial, sans-serif; }
+    .value { fill: #18396f; font: 800 13px 'Segoe UI', Arial, sans-serif; }
+    .legend { fill: #31527f; font: 700 13px 'Segoe UI', Arial, sans-serif; }
+  </style>
+  <rect class="bg" width="1120" height="951" rx="22"/>
+  <rect x="18" y="18" width="1084" height="915" rx="18" fill="rgba(255,255,255,0.58)" filter="url(#softShadow)"/>
+  <text class="title" x="44" y="62">Jumlah Hero per Sinergi</text>
+  <text class="subtitle" x="44" y="88">Sinergi dengan pool hero terbanyak lebih mudah dicapai.</text>
+  <line class="axis" x1="260" y1="108" x2="260" y2="909"/>
+  <line class="axis" x1="260" y1="909" x2="1024" y2="909"/>
+  <line class="grid" x1="451.0" y1="108" x2="451.0" y2="909"/>
+  <line class="grid" x1="642.0" y1="108" x2="642.0" y2="909"/>
+  <line class="grid" x1="833.0" y1="108" x2="833.0" y2="909"/>
+  <line class="grid" x1="1024.0" y1="108" x2="1024.0" y2="909"/>
+  <text class="label" x="246" y="139" text-anchor="end">KOF</text>
+  <rect x="260" y="122" width="764.0" height="24" rx="8" fill="#278dff"/>
+  <text class="value" x="1034.0" y="139">7</text>
+  <text class="label" x="246" y="176" text-anchor="end">Bruiser</text>
+  <rect x="260" y="159" width="654.9" height="24" rx="8" fill="#35d598"/>
+  <text class="value" x="924.9" y="176">6</text>
+  <text class="label" x="246" y="213" text-anchor="end">Dauntless</text>
+  <rect x="260" y="196" width="654.9" height="24" rx="8" fill="#ffc84f"/>
+  <text class="value" x="924.9" y="213">6</text>
+  <text class="label" x="246" y="250" text-anchor="end">Defender</text>
+  <rect x="260" y="233" width="654.9" height="24" rx="8" fill="#ff70b8"/>
+  <text class="value" x="924.9" y="250">6</text>
+  <text class="label" x="246" y="287" text-anchor="end">Exorcist</text>
+  <rect x="260" y="270" width="654.9" height="24" rx="8" fill="#8b5cf6"/>
+  <text class="value" x="924.9" y="287">6</text>
+  <text class="label" x="246" y="324" text-anchor="end">Heartbond</text>
+  <rect x="260" y="307" width="654.9" height="24" rx="8" fill="#ff8f3d"/>
+  <text class="value" x="924.9" y="324">6</text>
+  <text class="label" x="246" y="361" text-anchor="end">Luminexus</text>
+  <rect x="260" y="344" width="654.9" height="24" rx="8" fill="#06b6d4"/>
+  <text class="value" x="924.9" y="361">6</text>
+  <text class="label" x="246" y="398" text-anchor="end">Mage</text>
+  <rect x="260" y="381" width="654.9" height="24" rx="8" fill="#14b8a6"/>
+  <text class="value" x="924.9" y="398">6</text>
+  <text class="label" x="246" y="435" text-anchor="end">Marksman</text>
+  <rect x="260" y="418" width="654.9" height="24" rx="8" fill="#ef4444"/>
+  <text class="value" x="924.9" y="435">6</text>
+  <text class="label" x="246" y="472" text-anchor="end">Neobeasts</text>
+  <rect x="260" y="455" width="654.9" height="24" rx="8" fill="#64748b"/>
+  <text class="value" x="924.9" y="472">6</text>
+  <text class="label" x="246" y="509" text-anchor="end">Soul Vessels</text>
+  <rect x="260" y="492" width="654.9" height="24" rx="8" fill="#278dff"/>
+  <text class="value" x="924.9" y="509">6</text>
+  <text class="label" x="246" y="546" text-anchor="end">Stargazer</text>
+  <rect x="260" y="529" width="654.9" height="24" rx="8" fill="#35d598"/>
+  <text class="value" x="924.9" y="546">6</text>
+  <text class="label" x="246" y="583" text-anchor="end">Swiftblade</text>
+  <rect x="260" y="566" width="654.9" height="24" rx="8" fill="#ffc84f"/>
+  <text class="value" x="924.9" y="583">6</text>
+  <text class="label" x="246" y="620" text-anchor="end">Toy Mischief</text>
+  <rect x="260" y="603" width="654.9" height="24" rx="8" fill="#ff70b8"/>
+  <text class="value" x="924.9" y="620">6</text>
+  <text class="label" x="246" y="657" text-anchor="end">Weapon Master</text>
+  <rect x="260" y="640" width="654.9" height="24" rx="8" fill="#8b5cf6"/>
+  <text class="value" x="924.9" y="657">6</text>
+  <text class="label" x="246" y="694" text-anchor="end">Glory League</text>
+  <rect x="260" y="677" width="545.7" height="24" rx="8" fill="#ff8f3d"/>
+  <text class="value" x="815.7" y="694">5</text>
+  <text class="label" x="246" y="731" text-anchor="end">Phasewarper</text>
+  <rect x="260" y="714" width="436.6" height="24" rx="8" fill="#06b6d4"/>
+  <text class="value" x="706.6" y="731">4</text>
+  <text class="label" x="246" y="768" text-anchor="end">Beyond the Clouds</text>
+  <rect x="260" y="751" width="327.4" height="24" rx="8" fill="#14b8a6"/>
+  <text class="value" x="597.4" y="768">3</text>
+  <text class="label" x="246" y="805" text-anchor="end">Mystic Meow</text>
+  <rect x="260" y="788" width="327.4" height="24" rx="8" fill="#ef4444"/>
+  <text class="value" x="597.4" y="805">3</text>
+  <text class="label" x="246" y="842" text-anchor="end">Scavenger</text>
+  <rect x="260" y="825" width="327.4" height="24" rx="8" fill="#64748b"/>
+  <text class="value" x="597.4" y="842">3</text>
+  <text class="label" x="246" y="879" text-anchor="end">Mortal Rival</text>
+  <rect x="260" y="862" width="218.3" height="24" rx="8" fill="#278dff"/>
+  <text class="value" x="488.3" y="879">2</text>
+</svg>

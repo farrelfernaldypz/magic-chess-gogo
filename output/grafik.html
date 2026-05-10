@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grafik Analisis MCGG</title>
+  <style>
+    :root {
+      --ink: #14233f;
+      --muted: #5e708e;
+      --line: rgba(43, 91, 167, 0.16);
+      --blue: #278dff;
+      --paper: rgba(255, 255, 255, 0.78);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 16% 8%, rgba(255, 200, 79, 0.34), transparent 22%),
+        radial-gradient(circle at 86% 12%, rgba(110, 220, 255, 0.48), transparent 28%),
+        linear-gradient(180deg, #dff7ff 0%, #f7fbff 42%, #eff4ff 100%);
+    }
+    main {
+      width: min(1180px, calc(100% - 28px));
+      margin: 26px auto 56px;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: 22px;
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 16px 45px rgba(39,141,255,.16);
+      backdrop-filter: blur(18px);
+    }
+    h1 {
+      margin: 0;
+      color: #18396f;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+    .pill {
+      padding: 8px 12px;
+      color: #31527f;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.68);
+      font-size: .86rem;
+      font-weight: 800;
+    }
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .chart-card {
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.74);
+      border-radius: 24px;
+      background: var(--paper);
+      box-shadow: 0 24px 70px rgba(28,70,139,.18);
+      backdrop-filter: blur(18px);
+    }
+    .chart-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    @media (max-width: 720px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .meta {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <h1>Grafik Analisis MCGG</h1>
+      <div class="meta">
+        <span class="pill">Sample: 30</span>
+        <span class="pill">Seed: 20260510</span>
+        <span class="pill">Generated: 2026-05-10 14:54</span>
+      </div>
+    </header>
+    <section class="chart-grid">
+
+      <article class="chart-card">
+        <img src="grafik/hero-cost-distribution.svg" alt="Distribusi Cost Hero">
+      </article>
+      <article class="chart-card">
+        <img src="grafik/hero-role-distribution.svg" alt="Distribusi Role Hero">
+      </article>
+      <article class="chart-card">
+        <img src="grafik/top-heroes-power-index.svg" alt="Top Hero Power Index">
+      </article>
+      <article class="chart-card">
+        <img src="grafik/synergy-hero-count.svg" alt="Jumlah Hero per Sinergi">
+      </article>
+      <article class="chart-card">
+        <img src="grafik/profile-final-power.svg" alt="Rata-rata Final Power">
+      </article>
+      <article class="chart-card">
+        <img src="grafik/profile-commander-hp.svg" alt="Rata-rata HP Commander">
+      </article>
+      <article class="chart-card">
+        <img src="grafik/profile-active-synergies.svg" alt="Rata-rata Sinergi Aktif">
+      </article>
+      <article class="chart-card">
+        <img src="grafik/checkpoint-gold-timeline.svg" alt="Timeline Gold per Checkpoint">
+      </article>
+      <article class="chart-card">
+        <img src="grafik/adaptive-weight-farming.svg" alt="Bobot Adaptive - Farming / Scavenger">
+      </article>
+      <article class="chart-card">
+        <img src="grafik/adaptive-weight-neobeast.svg" alt="Bobot Adaptive - Stacking / Neobeasts">
+      </article>
+      <article class="chart-card">
+        <img src="grafik/adaptive-weight-normal.svg" alt="Bobot Adaptive - Normal">
+      </article>
+    </section>
+  </main>
+</body>
+</html>

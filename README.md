@@ -68,6 +68,30 @@ Di Streamlit, gunakan tombol:
 - `Refresh Random Board + Shop` untuk mengganti board dan shop sekaligus.
 - `Refresh Shop Saja` untuk mengganti shop dari board yang sama.
 
+## Cara Generate Grafik Analisis
+
+Tool grafik statis tersedia di:
+
+```bash
+python tools/generate_grafik.py
+```
+
+Output yang dibuat:
+
+```text
+output/grafik.html
+output/grafik/*.svg
+output/grafik/manifest.json
+```
+
+Grafik mencakup distribusi cost hero, distribusi role, top power index, jumlah hero per sinergi, perbandingan final power strategi, timeline gold checkpoint, dan bobot adaptive per strategi.
+
+Opsi yang bisa dipakai:
+
+```bash
+python tools/generate_grafik.py --samples 50 --seed 20260510
+```
+
 ## Letak Algoritma
 
 Alur algoritma ada di beberapa file:
