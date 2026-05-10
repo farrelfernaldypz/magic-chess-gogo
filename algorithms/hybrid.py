@@ -158,7 +158,7 @@ class HybridOptimizer:
         if candidate_pool is None:
             candidate_pool = [
                 hid for hid in HEROES
-                if hid not in board.all_heroes
+                if hid not in board.all_heroes or (board.game_phase in {"mid", "late"} and board.can_star_up(hid))
             ]
 
         # Filter: hanya yang mampu dibeli
@@ -176,7 +176,7 @@ class HybridOptimizer:
         # ── Score Semua Kandidat ──────────────────────────
         scored: List[Tuple[str, float, Dict]] = []
         for hid in affordable:
-            if hid in board.all_heroes:
+            if hid in board.all_heroes and (board.game_phase == "early" or not board.can_star_up(hid)):
                 continue
             score, details = self.hybrid_score(hid, board, weights)
             scored.append((hid, score, details))

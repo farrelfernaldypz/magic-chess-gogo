@@ -31,7 +31,7 @@ let navScrollLock = false;
 const algorithmDescriptions = {
     Greedy: "Greedy dipakai karena early game butuh keputusan cepat dari shop yang muncul. Skor menekankan value langsung: cost hero, power saat ini, dan synergy yang bisa segera aktif.",
     Heuristic: "Heuristic dipakai karena mid game sudah punya arah board. Skor menilai potensi ke depan: completion synergy, kualitas carry transisi, keseimbangan role, dan jalur menuju hero premium.",
-    Adaptive: "Adaptive dipakai karena late game bergantung pada kondisi aktual. Skor menyesuaikan gold, level shop, carry yang sudah terbentuk, board yang hampir penuh, dan peluang upgrade ke cost tinggi."
+    Adaptive: "Adaptive dipakai karena late game bergantung pada kondisi aktual. Skor menyesuaikan gold, carry yang sudah terbentuk, peluang star-up, board yang hampir penuh, dan target sinergi 6."
 };
 
 const summaryProfile = document.getElementById("summary-profile");
@@ -55,6 +55,51 @@ function formatChips(items, type = "") {
     }).join("");
 }
 
+function starText(star = 1) {
+    return "★".repeat(Math.max(1, Number(star) || 1));
+}
+
+function formatHeroChips(items, stars = {}, type = "board") {
+    const values = items || [];
+    if (!values.length) {
+        return '<span class="chip">-</span>';
+    }
+
+    return values.map((item) => {
+        const star = stars[item] || 1;
+        return `<span class="chip ${type} hero-chip">${item}<span class="star-badge" aria-label="Bintang ${star}">${starText(star)}</span></span>`;
+    }).join("");
+}
+
+function synergyIcon(name) {
+    return synergyIcons[name]
+        ? `<img class="chip-icon synergy-chip-icon" src="${encodeURI(`assets/synergy/${synergyIcons[name]}`)}" alt="">`
+        : "";
+}
+
+function formatSynergyChips(items) {
+    const values = items || [];
+    if (!values.length) {
+        return '<span class="chip">-</span>';
+    }
+
+    return values.map((item) => {
+        const synergy = typeof item === "string" ? { name: item } : item;
+        const tier = Number.isFinite(Number(synergy.tier)) ? Number(synergy.tier) : null;
+        const activeCount = tier || "";
+        const label = activeCount ? `${activeCount} ${synergy.name}` : synergy.name;
+
+        return `
+            <span class="chip synergy synergy-chip" title="${synergy.effect || synergy.name}">
+                ${synergyIcon(synergy.name)}
+                <span class="synergy-chip-text">
+                    <span>${label}</span>
+                </span>
+            </span>
+        `;
+    }).join("");
+}
+
 function recommendationRows(items) {
     return `
         <table class="rec-table">
@@ -71,7 +116,7 @@ function recommendationRows(items) {
                 ${(items || []).map((rec) => `
                     <tr>
                         <td>${rec.rank}</td>
-                        <td><strong>${rec.hero}</strong></td>
+                        <td><strong>${rec.hero}</strong> <span class="rec-star">${starText(rec.star || 1)}</span></td>
                         <td>${rec.cost}</td>
                         <td>${rec.adjusted}</td>
                         <td>${rec.reason}</td>
@@ -91,6 +136,10 @@ function currentRun() {
 function checkpointLineupReason(snapshot) {
     const boardSize = (snapshot.board_after || []).length;
     return `Pada checkpoint ${snapshot.checkpoint_label} level ${snapshot.player_level}, lineup berisi ${boardSize} hero. ${snapshot.chosen} dipilih karena ${snapshot.chosen_reason}. Carry utama saat ini adalah ${snapshot.carry}; ${snapshot.carry_reason}.`;
+}
+
+function activeSynergies(snapshot) {
+    return (snapshot.active_synergies || []).slice(0, 6);
 }
 
 function render() {
@@ -114,8 +163,8 @@ function render() {
     });
 
     finalBuild.innerHTML = `
-        <div class="chip-row">${formatChips(run.final_board, "board")}</div>
-        <div class="chip-row" style="margin-top:12px">${formatChips(run.final_synergies, "synergy")}</div>
+        <div class="chip-row">${formatHeroChips(run.final_board, run.final_board_stars, "board")}</div>
+        <div class="chip-row synergy-lineup-row" style="margin-top:12px">${formatSynergyChips(run.final_active_synergies)}</div>
     `;
 
     phaseList.className = "phase-list";
@@ -172,13 +221,17 @@ function render() {
                     </div>
                     <div class="info-box">
                         <span class="section-label">Hero yang dipilih</span>
-                        <strong class="pick-name">${snapshot.chosen}</strong>
+                        <strong class="pick-name">${snapshot.chosen} <span class="pick-star">${starText(snapshot.chosen_star || 1)}</span></strong>
                         <div class="small">${snapshot.chosen_reason}</div>
                         <div class="small">${snapshot.carry_reason}</div>
                     </div>
                     <div class="info-box">
                         <span class="section-label">Board setelah beli</span>
-                        <div class="chip-row">${formatChips(snapshot.board_after, "board")}</div>
+                        <div class="chip-row">${formatHeroChips(snapshot.board_after, snapshot.board_after_stars, "board")}</div>
+                    </div>
+                    <div class="info-box">
+                        <span class="section-label">Sinergi aktif</span>
+                        <div class="chip-row">${formatSynergyChips(activeSynergies(snapshot))}</div>
                     </div>
                 </div>
                 <div class="rec-box">

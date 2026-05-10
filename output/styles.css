@@ -512,9 +512,13 @@ h1 {
 
 .summary-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px;
     margin-top: 18px;
+}
+
+.dataset-summary {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .algorithm-guide {
@@ -667,9 +671,60 @@ h1 {
     background: rgba(53, 213, 152, 0.18);
 }
 
+.hero-chip {
+    gap: 7px;
+}
+
+.star-badge,
+.rec-star,
+.pick-star {
+    color: #9a6500;
+    font-size: 0.78rem;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+.star-badge {
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: rgba(255, 200, 79, 0.26);
+}
+
 .chip.synergy {
     color: #845200;
     background: rgba(255, 200, 79, 0.24);
+}
+
+.synergy-chip {
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 7px 12px 7px 8px;
+}
+
+.synergy-chip-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+.synergy-chip-text {
+    display: grid;
+    gap: 1px;
+    line-height: 1.1;
+}
+
+.synergy-chip-text small {
+    color: #8f6816;
+    font-size: 0.68rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.synergy-lineup-row .synergy-chip {
+    min-height: 50px;
+    background: linear-gradient(135deg, rgba(255, 200, 79, 0.32), rgba(255, 255, 255, 0.7));
 }
 
 .phase-list {

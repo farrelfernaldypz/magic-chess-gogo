@@ -19,6 +19,16 @@ SYNERGY_DATA_FILE = BASE_DIR / "data" / "raw" / "synergies_id.json"
 
 
 def _run_to_dict(run):
+    final_active_synergies = [
+        {
+            "name": name,
+            "count": count,
+            "tier": tier.required,
+            "effect": tier.description,
+        }
+        for name, tier, count in run.final_board.active_synergies
+    ]
+
     return {
         "profile": {
             "name": run.profile.name,
@@ -26,7 +36,12 @@ def _run_to_dict(run):
         },
         "final_power": run.final_power,
         "final_board": [HEROES[h].name for h in run.final_board.heroes_on_board],
+        "final_board_stars": {
+            HEROES[h].name: run.final_board.star_level(h)
+            for h in run.final_board.heroes_on_board
+        },
         "final_synergies": run.final_synergies,
+        "final_active_synergies": final_active_synergies,
         "snapshots": [
             {
                 "phase_label": snap.phase_label,
@@ -36,18 +51,26 @@ def _run_to_dict(run):
                 "round_number": snap.round_number,
                 "gold_after": snap.gold_after,
                 "board_after": [HEROES[h].name for h in snap.board_after],
+                "board_after_stars": {
+                    HEROES[h].name: snap.board_after_stars.get(h, 1)
+                    for h in snap.board_after
+                },
                 "shop": [HEROES[h].name for h in snap.shop_heroes],
                 "chosen": HEROES[snap.chosen_hero_id].name if snap.chosen_hero_id in HEROES else "-",
+                "chosen_star": snap.chosen_star,
                 "chosen_reason": snap.chosen_reason,
                 "carry": HEROES[snap.carry_hero_id].name if snap.carry_hero_id in HEROES else "-",
                 "carry_reason": snap.carry_reason,
                 "decision_algorithm": snap.decision_algorithm,
                 "adaptive_mode": snap.adaptive_mode,
+                "active_synergies": snap.active_synergies_after,
                 "recommendations": [
                     {
                         "rank": rec.rank,
                         "hero": rec.hero_name,
                         "cost": rec.cost,
+                        "star": rec.star_level,
+                        "copies": rec.copies,
                         "adjusted": rec.adjusted,
                         "reason": rec.reason,
                     }
@@ -143,7 +166,7 @@ def render_html() -> str:
       <article class="guide-card">
         <span>Late Game</span>
         <h3>Adaptive</h3>
-        <p>Dipakai pada checkpoint 5-1 dan 6-1 karena keputusan akhir harus menyesuaikan gold, level shop, carry yang sudah terbentuk, dan peluang upgrade ke hero cost tinggi.</p>
+        <p>Dipakai pada checkpoint 5-1 dan 6-1 karena keputusan akhir harus menyesuaikan gold, carry yang sudah terbentuk, peluang star-up, dan target sinergi 6.</p>
       </article>
     </section>
 
