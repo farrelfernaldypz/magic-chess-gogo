@@ -8,6 +8,10 @@ from algorithms.hybrid import HybridOptimizer, OptimizationResult
 from algorithms.shop import roll_shop
 from core.board import BoardState
 from data.heroes import HEROES, Hero
+from data.synergies import SYNERGIES
+
+
+TIER_SIX = 6
 
 
 @dataclass
@@ -153,6 +157,70 @@ def _normalized_efficiency(hero: Hero) -> float:
     return (hero.power_index / max(hero.cost, 1)) / max_eff if max_eff else 0.0
 
 
+def _tier_six_targets(hero: Hero, board: BoardState) -> List[tuple[str, int, int, bool]]:
+    counts = board.synergy_counts
+    targets: List[tuple[str, int, int, bool]] = []
+
+    for syn in hero.synergies:
+        current = counts.get(syn, 0)
+        synergy = SYNERGIES.get(syn)
+        if current <= 0 or not synergy:
+            continue
+        if not any(tier.required == TIER_SIX for tier in synergy.tiers):
+            continue
+        if current >= TIER_SIX:
+            continue
+
+        after = current + 1
+        targets.append((syn, current, after, after >= TIER_SIX))
+
+    return sorted(targets, key=lambda item: (item[3], item[2], item[0]), reverse=True)
+
+
+def _tier_six_progress_bonus(hero_id: str, board: BoardState, phase_key: str) -> float:
+    if phase_key not in {"mid", "late"}:
+        return 0.0
+
+    hero = HEROES[hero_id]
+    targets = _tier_six_targets(hero, board)
+    if not targets:
+        return 0.0
+
+    best = 0.0
+    for _syn, current, after, completes in targets:
+        needed_before = TIER_SIX - current
+        progress = after / TIER_SIX
+        bonus = 0.08 + (hero.cost / 5.0) * 0.12 + progress * 0.10
+
+        if completes:
+            bonus += 0.32
+        elif needed_before <= 2:
+            bonus += 0.16
+        elif needed_before <= 3:
+            bonus += 0.08
+
+        if hero.role == "Carry" and hero.cost >= 4:
+            bonus += 0.08
+        if phase_key == "late":
+            bonus *= 1.25
+
+        best = max(best, bonus)
+
+    return round(min(best, 0.65), 4)
+
+
+def _tier_six_reason(hero_id: str, board: BoardState) -> str:
+    hero = HEROES[hero_id]
+    targets = _tier_six_targets(hero, board)
+    if not targets:
+        return ""
+
+    syn, _current, after, completes = targets[0]
+    if completes:
+        return f"aktifkan {syn} 6"
+    return f"arah {syn} 6 ({after}/6)"
+
+
 def _strategy_adjustment(profile_key: str, hero_id: str, board: BoardState, phase_key: str, base_rec) -> tuple[float, str]:
     hero = HEROES[hero_id]
     counts = board.synergy_counts
@@ -160,7 +228,6 @@ def _strategy_adjustment(profile_key: str, hero_id: str, board: BoardState, phas
     near_tier_syns = []
     for syn in hero.synergies:
         current = counts.get(syn, 0)
-        from data.synergies import SYNERGIES
         obj = SYNERGIES.get(syn)
         if not obj:
             continue
@@ -170,12 +237,29 @@ def _strategy_adjustment(profile_key: str, hero_id: str, board: BoardState, phas
 
     if profile_key == "farming":
         bonus = 0.08 * _normalized_efficiency(hero)
-        if "Scavenger" in hero.synergies:
+        if "Scavenger" in hero.synergies and phase_key != "late":
             existing = counts.get("Scavenger", 0)
-            bonus += 0.42 + existing * 0.12
             if phase_key == "early":
-                bonus += 0.16
-            reason = f"Prioritas farming Scavenger ({existing + 1}/3)"
+                bonus += 0.42 + existing * 0.12 + 0.16
+                reason = f"Prioritas farming Scavenger ({existing + 1}/3)"
+            else:
+                bonus += 0.14 + existing * 0.04
+                reason = f"Transisi farming Scavenger ({existing + 1}/3)"
+            return round(bonus, 4), reason
+        if phase_key == "late":
+            if "Scavenger" in hero.synergies:
+                bonus -= 0.30
+            if hero.cost >= 4:
+                bonus += 0.08
+            if matching_syns:
+                bonus += 0.07
+            if near_tier_syns:
+                bonus += 0.08
+            reason = "Farming selesai; fokus carry dan synergy late"
+            if near_tier_syns:
+                reason += f", dekat aktifkan {near_tier_syns[0]}"
+            elif matching_syns:
+                reason += f", nyambung ke {matching_syns[0]}"
             return round(bonus, 4), reason
         if phase_key == "early" and "Neobeasts" in hero.synergies:
             bonus -= 0.16
@@ -187,7 +271,7 @@ def _strategy_adjustment(profile_key: str, hero_id: str, board: BoardState, phas
             bonus += 0.05
         if phase_key == "early" and hero.cost >= 4:
             bonus -= 0.08
-        reason = "Opsi sementara sambil mencari Scavenger"
+        reason = "Opsi sementara sambil mencari Scavenger" if phase_key == "early" else "Transisi ke carry dan synergy 6"
         if near_tier_syns:
             reason += f", dekat aktifkan {near_tier_syns[0]}"
         elif matching_syns:
@@ -237,22 +321,34 @@ def _carry_priority_bonus(hero_id: str, phase_key: str, current_carry_id: Option
     if hero.role != "Carry":
         return 0.0
 
-    bonus = 0.05
+    bonus = 0.03
     if phase_key == "early":
-        bonus += 0.06
+        bonus += 0.05
     elif phase_key == "mid":
-        bonus += 0.12
+        bonus += hero.cost * 0.035
+        if hero.cost >= 4:
+            bonus += 0.08
+        elif hero.cost <= 2:
+            bonus -= 0.03
     else:
-        bonus += 0.18 if hero.cost >= 5 else 0.08
+        if hero.cost <= 2:
+            bonus -= 0.14
+        elif hero.cost == 3:
+            bonus += 0.02
+        else:
+            bonus += 0.12 + (hero.cost - 4) * 0.08
 
     if current_carry_id:
         current = HEROES[current_carry_id]
+        shared_synergy = bool(set(hero.synergies) & set(current.synergies))
         if hero_id == current_carry_id:
             bonus += 0.18
-        elif hero.cost > current.cost and hero.cost >= 5:
-            bonus += 0.14
+        elif hero.cost > current.cost:
+            bonus += 0.10 if shared_synergy else 0.04
+        elif phase_key in {"mid", "late"} and hero.cost < current.cost:
+            bonus -= 0.18
 
-    return bonus
+    return round(bonus, 4)
 
 
 def _rank_with_profile(
@@ -262,13 +358,24 @@ def _rank_with_profile(
     current_carry_id: Optional[str] = None,
 ) -> List[RecommendationView]:
     ranked: List[RecommendationView] = []
-    for rec in result.recommendations:
+    recommendations = result.recommendations
+    if result.game_phase == "late":
+        non_scavenger = [rec for rec in recommendations if "Scavenger" not in HEROES[rec.hero_id].synergies]
+        if non_scavenger:
+            recommendations = non_scavenger
+
+    for rec in recommendations:
         bonus, reason = _strategy_adjustment(profile_key, rec.hero_id, board, result.game_phase, rec)
         phase_score, algorithm_name = _phase_algorithm_score(rec, result.game_phase)
         carry_bonus = _carry_priority_bonus(rec.hero_id, result.game_phase, current_carry_id)
-        adjusted = round(phase_score + bonus + carry_bonus, 4)
+        tier_six_bonus = _tier_six_progress_bonus(rec.hero_id, board, result.game_phase)
+        adjusted = round(phase_score + bonus + carry_bonus + tier_six_bonus, 4)
         reason = f"{algorithm_name}: {reason}"
-        if carry_bonus and HEROES[rec.hero_id].role == "Carry":
+        if tier_six_bonus:
+            reason += f", {_tier_six_reason(rec.hero_id, board)}"
+            if HEROES[rec.hero_id].cost >= 4:
+                reason += ", cost tinggi"
+        if carry_bonus > 0 and HEROES[rec.hero_id].role == "Carry":
             reason += ", kandidat carry"
         ranked.append(
             RecommendationView(
@@ -297,7 +404,43 @@ def _best_carry_on_board(board: BoardState) -> Optional[str]:
     carries = [hid for hid in board.heroes_on_board if hid in HEROES and HEROES[hid].role == "Carry"]
     if not carries:
         return None
-    return max(carries, key=lambda hid: (HEROES[hid].cost, HEROES[hid].carry_score, HEROES[hid].power_index))
+
+    counts = board.synergy_counts
+
+    def carry_key(hid: str) -> tuple[int, int, float, float]:
+        hero = HEROES[hid]
+        tier_six_progress = max(
+            (
+                counts.get(syn, 0)
+                for syn in hero.synergies
+                if syn in SYNERGIES and any(tier.required == TIER_SIX for tier in SYNERGIES[syn].tiers)
+            ),
+            default=0,
+        )
+        return hero.cost, tier_six_progress, hero.carry_score, hero.power_index
+
+    return max(carries, key=carry_key)
+
+
+def _should_refocus_existing_carry(current_carry_id: Optional[str], candidate_id: Optional[str], phase_key: str) -> bool:
+    if not candidate_id or candidate_id == current_carry_id:
+        return False
+    if not current_carry_id:
+        return True
+    if phase_key not in {"mid", "late"}:
+        return False
+
+    current = HEROES[current_carry_id]
+    candidate = HEROES[candidate_id]
+    shared_synergy = bool(set(candidate.synergies) & set(current.synergies))
+
+    if candidate.cost >= 4 and current.cost <= 2:
+        return True
+    if candidate.cost > current.cost and (shared_synergy or phase_key == "late"):
+        return True
+    if candidate.cost == current.cost and candidate.carry_score > current.carry_score + 0.6:
+        return True
+    return False
 
 
 def _should_switch_carry(current_carry_id: Optional[str], candidate_id: str, phase_key: str, current_gold: int) -> bool:
@@ -311,11 +454,23 @@ def _should_switch_carry(current_carry_id: Optional[str], candidate_id: str, pha
     if candidate_id == current_carry_id:
         return False
 
+    shared_synergy = bool(set(candidate.synergies) & set(current.synergies))
+    if phase_key in {"mid", "late"} and candidate.cost < current.cost:
+        return False
+    if phase_key == "late" and candidate.cost <= 2 and current.cost >= 3:
+        return False
+
     upgrade_value = (candidate.cost - current.cost) * 0.45 + (candidate.carry_score - current.carry_score)
-    if phase_key == "late" and candidate.cost >= 5 and current.cost < 5 and current_gold >= candidate.cost:
-        return upgrade_value >= 0.35
+    if phase_key == "late":
+        if candidate.cost >= 4 and candidate.cost >= current.cost and current_gold >= candidate.cost:
+            threshold = 0.25 if shared_synergy else 0.65
+            if candidate.cost >= 5 and current.cost < 5:
+                threshold -= 0.15
+            return upgrade_value >= threshold
+        return False
     if phase_key == "mid" and candidate.cost >= current.cost:
-        return upgrade_value >= 0.75
+        threshold = 0.45 if shared_synergy else 0.75
+        return upgrade_value >= threshold
     return upgrade_value >= 1.2
 
 
@@ -436,6 +591,15 @@ def simulate_profile_game(seed: int, profile_key: str) -> GameRun:
 
             if phase.key == "late" and current_carry_id:
                 current_carry = HEROES[current_carry_id]
+                tier_six_candidates = [
+                    item for item in ranked
+                    if _tier_six_targets(HEROES[item.hero_id], board)
+                ]
+                best_tier_six = max(
+                    tier_six_candidates,
+                    key=lambda item: (HEROES[item.hero_id].cost, item.adjusted),
+                    default=None,
+                )
                 better_cost5 = next(
                     (
                         item for item in ranked
@@ -446,12 +610,17 @@ def simulate_profile_game(seed: int, profile_key: str) -> GameRun:
                     None,
                 )
                 if current_carry.cost >= 5 and not better_cost5:
-                    chosen = current_carry_id
-                    chosen_reason = (
-                        f"Adaptive: pertahankan carry {current_carry.name}; "
-                        "late game fokus upgrade/star-up karena carry premium sudah terbentuk"
-                    )
-                    carry_reason = "Carry late dipertahankan"
+                    best_tier_targets = _tier_six_targets(HEROES[best_tier_six.hero_id], board) if best_tier_six else []
+                    if best_tier_six and (HEROES[best_tier_six.hero_id].cost >= 4 or best_tier_targets[0][3]):
+                        chosen = best_tier_six.hero_id
+                        chosen_reason = best_tier_six.reason
+                    else:
+                        chosen = current_carry_id
+                        chosen_reason = (
+                            f"Adaptive: pertahankan carry {current_carry.name}; "
+                            "late game fokus upgrade/star-up karena carry premium sudah terbentuk"
+                        )
+                        carry_reason = "Carry late dipertahankan"
                 elif better_cost5:
                     chosen = better_cost5.hero_id
                     chosen_reason = better_cost5.reason + ", upgrade carry late ke cost 5"
@@ -478,14 +647,24 @@ def simulate_profile_game(seed: int, profile_key: str) -> GameRun:
                             carry_reason = f"Carry utama sementara: {HEROES[current_carry_id].name}"
                 if action.startswith("replace:"):
                     old = HEROES[action.split(":", 1)[1]].name
-                    chosen_reason += f" â€¢ mengganti {old}"
+                    chosen_reason += f", mengganti {old}"
                 elif action == "bench":
-                    chosen_reason += " â€¢ disimpan di bench"
+                    chosen_reason += ", disimpan di bench"
                 elif action == "skip":
-                    chosen_reason += " â€¢ gold tidak cukup"
+                    chosen_reason += ", gold tidak cukup"
 
             if chosen and action == "hold":
                 chosen_reason += " - tidak membeli hero baru"
+
+            board_carry_id = _best_carry_on_board(board)
+            if _should_refocus_existing_carry(current_carry_id, board_carry_id, phase.key):
+                previous = HEROES[current_carry_id].name if current_carry_id else None
+                current_carry_id = board_carry_id
+                carry_reason = (
+                    f"Carry utama ditetapkan ke {HEROES[current_carry_id].name}"
+                    if not previous
+                    else f"Carry diganti dari {previous} ke {HEROES[current_carry_id].name} karena cost/synergy lebih kuat"
+                )
 
             if not current_carry_id:
                 current_carry_id = _best_carry_on_board(board)

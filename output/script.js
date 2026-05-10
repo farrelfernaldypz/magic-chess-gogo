@@ -37,7 +37,6 @@ const algorithmDescriptions = {
 const summaryProfile = document.getElementById("summary-profile");
 const summaryPower = document.getElementById("summary-power");
 const summarySynergy = document.getElementById("summary-synergy");
-const summarySeed = document.getElementById("summary-seed");
 const finalBuild = document.getElementById("final-build");
 const phaseList = document.getElementById("phase-list");
 const strategySelect = document.getElementById("strategy-select");
@@ -108,11 +107,10 @@ function render() {
     summaryProfile.textContent = run.profile.name;
     summaryPower.textContent = run.final_power;
     summarySynergy.textContent = run.final_synergies.slice(0, 2).join(", ") || "-";
-    summarySeed.textContent = game.seed;
 
     document.querySelectorAll(".summary-card").forEach((card, index) => {
         const colors = [accent, "rgba(53, 213, 152, 0.5)", "rgba(110, 220, 255, 0.5)", "rgba(255, 200, 79, 0.55)"];
-        card.style.setProperty("--accent", colors[index]);
+        card.style.setProperty("--accent", colors[index % colors.length]);
     });
 
     finalBuild.innerHTML = `

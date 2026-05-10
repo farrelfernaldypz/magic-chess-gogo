@@ -20,7 +20,6 @@ SYNERGY_DATA_FILE = BASE_DIR / "data" / "raw" / "synergies_id.json"
 
 def _run_to_dict(run):
     return {
-        "seed": run.seed,
         "profile": {
             "name": run.profile.name,
             "accent": run.profile.accent,
@@ -65,7 +64,7 @@ def build_games(sample_count: int = 20):
     for _ in range(sample_count):
         seed = random.randint(10000, 999999)
         runs = simulate_all_profiles(seed)
-        games.append({"seed": seed, "runs": {key: _run_to_dict(run) for key, run in runs.items()}})
+        games.append({"runs": {key: _run_to_dict(run) for key, run in runs.items()}})
     return games
 
 
@@ -127,10 +126,6 @@ def render_html() -> str:
       <article class="summary-card">
         <span>Core Synergy</span>
         <strong id="summary-synergy">-</strong>
-      </article>
-      <article class="summary-card">
-        <span>Seed</span>
-        <strong id="summary-seed">-</strong>
       </article>
     </section>
 
